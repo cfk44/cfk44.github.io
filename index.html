@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christoph Friedrich Koch — Business Development × Data Science · Berlin</title>
+<meta name="description" content="Christoph Friedrich Koch (CFK) — Business Development, Growth & Partnerships mit Data-Science-Fundament. Berlin. Bitpanda, Stripe, Workday, SAP.">
+<meta property="og:title" content="Christoph Friedrich Koch — Business Development × Data Science">
+<meta property="og:description" content="Acht Jahre BD, Growth & Partnerships bei Bitpanda, Stripe, Workday und SAP — erweitert um ein Fundament in Data Science & Machine Learning. Berlin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cfk44.github.io/">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://cfk44.github.io/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --porcelain:#F7F6F3;
+    --white:#FFFFFF;
+    --ink:#141816;
+    --green:#0B5D4E;
+    --green-deep:#083F35;
+    --signal:#FF5A1F;
+    --mist:#79817D;
+    --body:#3B403E;
+    --line:rgba(20,24,22,.13);
+    --line-light:rgba(247,246,243,.18);
+    --maxw:1060px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    background:var(--porcelain);color:var(--ink);
+    line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'JetBrains Mono',monospace}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,246,243,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nav-mark{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.1em;text-decoration:none;color:var(--green)}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{font-size:14px;text-decoration:none;color:var(--mist);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .lang-toggle{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--line);border-radius:999px;background:transparent;
+    padding:5px 12px;cursor:pointer;color:var(--ink);transition:border-color .2s;
+  }
+  .lang-toggle:hover{border-color:var(--ink)}
+  @media(max-width:680px){.nav-links a:not(.keep){display:none}}
+
+  /* ---------- Hero ---------- */
+  header.hero{padding:104px 0 88px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--green);margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:700;
+    letter-spacing:-.02em;max-width:19ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero .sub{margin-top:28px;max-width:58ch;font-size:1.12rem;color:var(--body)}
+  .hero .sub b{color:var(--ink)}
+  .hero .cta-row{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;
+    text-decoration:none;padding:11px 20px;border-radius:6px;transition:transform .15s ease, background .2s, color .2s;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--green);color:var(--porcelain)}
+  .btn-primary:hover{background:var(--green-deep)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--porcelain)}
+
+  /* ---------- Sections ---------- */
+  section{padding:84px 0}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:46px;flex-wrap:wrap}
+  h2{font-size:clamp(1.65rem,3.2vw,2.3rem);font-weight:700;letter-spacing:-.015em}
+  .sec-idx{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mist);letter-spacing:.1em}
+
+  /* ---------- About / values ---------- */
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+  .about-grid p{margin-bottom:18px;max-width:60ch;color:var(--body)}
+  .about-grid p b{color:var(--ink)}
+  .fact-list{border-top:1px solid var(--line);align-self:start}
+  .fact{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .fact .k{color:var(--mist);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;padding-top:2px}
+  .fact .v{text-align:right}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:36px}}
+
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:56px}
+  .pillar{border-top:2px solid var(--green);padding-top:20px}
+  .pillar h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+  .pillar p{font-size:.93rem;color:var(--body)}
+
+  /* ---------- Timeline ---------- */
+  .timeline{border-top:1px solid var(--line)}
+  .t-row{
+    display:grid;grid-template-columns:170px 1fr;gap:28px;
+    padding:26px 0;border-bottom:1px solid var(--line);
+  }
+  .t-when{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--green);letter-spacing:.03em;padding-top:4px;line-height:1.8}
+  .t-role{font-weight:500;font-size:1.06rem}
+  .t-org{color:var(--mist);font-size:.94rem;margin-top:2px}
+  .t-desc{margin-top:10px;font-size:.94rem;color:var(--body);max-width:64ch}
+  .t-desc li{margin-left:18px;margin-bottom:5px}
+  @media(max-width:620px){.t-row{grid-template-columns:1fr;gap:6px}}
+
+  /* ---------- Projects ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .card{
+    border:1px solid var(--line);border-radius:10px;padding:30px 28px;
+    background:var(--white);display:flex;flex-direction:column;gap:12px;
+    text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  a.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px -18px rgba(20,24,22,.28)}
+  .card .tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+  .card h3{font-size:1.26rem;font-weight:700;letter-spacing:-.01em}
+  .card p{font-size:.94rem;color:var(--body);flex-grow:1}
+  .card .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mist);border-top:1px solid var(--line);padding-top:14px}
+  .card .meta .link{color:var(--green)}
+
+  /* ---------- Personal projects ---------- */
+  .personal{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .personal-intro{max-width:62ch;color:var(--body);margin-bottom:56px}
+  .personal-intro b{color:var(--ink)}
+  .elev{margin:0 0 56px;line-height:0}
+  .elev svg{width:100%;height:74px;display:block}
+  .tours{border-top:1px solid var(--line)}
+  .tour{
+    display:grid;grid-template-columns:130px 1fr auto;gap:26px;align-items:baseline;
+    padding:26px 0;border-bottom:1px solid var(--line);
+  }
+  .tour .code{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--signal);letter-spacing:.05em}
+  .tour h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+  .tour p{font-size:.93rem;color:var(--body);margin-top:6px;max-width:56ch}
+  .tour .stats{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mist);
+    text-align:right;line-height:1.9;white-space:nowrap;
+  }
+  .tour .stats strong{color:var(--ink);font-weight:500}
+  @media(max-width:760px){
+    .tour{grid-template-columns:1fr;gap:8px}
+    .tour .stats{text-align:left;white-space:normal}
+  }
+  .personal-note{margin-top:44px;font-size:.93rem;color:var(--mist);max-width:64ch}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--green-deep);color:var(--porcelain)}
+  .contact h2{max-width:24ch;color:var(--porcelain)}
+  .contact .sec-idx{color:rgba(247,246,243,.45)}
+  .contact .lede{margin-top:16px;max-width:56ch;color:rgba(247,246,243,.75);font-size:1.02rem}
+  .contact .mail{
+    display:inline-block;margin-top:30px;font-family:'JetBrains Mono',monospace;
+    font-size:clamp(.95rem,2.4vw,1.25rem);color:var(--porcelain);text-decoration:none;
+    border-bottom:1px solid rgba(247,246,243,.4);padding-bottom:3px;transition:border-color .2s;
+  }
+  .contact .mail:hover{border-bottom-color:var(--porcelain)}
+  .socials{margin-top:36px;display:flex;gap:26px;flex-wrap:wrap}
+  .socials a{
+    font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.05em;
+    color:rgba(247,246,243,.7);text-decoration:none;transition:color .2s;
+  }
+  .socials a:hover{color:var(--porcelain)}
+  footer{
+    background:var(--green-deep);color:rgba(247,246,243,.45);
+    border-top:1px solid var(--line-light);
+    padding:24px 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;
+  }
+  .footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">CFK</a>
+    <div class="nav-links">
+      <a href="#about" data-de="Profil" data-en="Profile">Profil</a>
+      <a href="#work" data-de="Stationen" data-en="Experience">Stationen</a>
+      <a href="#projects" data-de="Werke" data-en="Work">Werke</a>
+      <a href="#personal" data-de="Persönliche Projekte" data-en="Personal projects">Persönliche Projekte</a>
+      <a class="keep" href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
+      <button class="lang-toggle keep" id="langToggle" aria-label="Sprache wechseln / switch language">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow" data-de="Berlin · Business Development × Data Science" data-en="Berlin · Business Development × Data Science">Berlin · Business Development × Data Science</p>
+    <h1 data-de="Christoph Friedrich Koch. Kommerzielle Strategie mit <em>Daten-Fundament</em>."
+        data-en="Christoph Friedrich Koch. Commercial strategy with a <em>data foundation</em>.">
+        Christoph Friedrich Koch. Kommerzielle Strategie mit <em>Daten-Fundament</em>.</h1>
+    <p class="sub"
+       data-de="Acht Jahre Business Development, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday und SAP</b> — vom Go-to-Market über BaFin-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München. 2026 erweitert um ein Fundament in <b>Data Science &amp; Machine Learning</b>."
+       data-en="Eight years of business development, growth &amp; partnerships at <b>Bitpanda, Stripe, Workday and SAP</b> — from go-to-market and BaFin licensing to the strategic partnership with FC Bayern Munich. Extended in 2026 by a foundation in <b>data science &amp; machine learning</b>.">
+       Acht Jahre Business Development, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday und SAP</b> — vom Go-to-Market über BaFin-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München. 2026 erweitert um ein Fundament in <b>Data Science &amp; Machine Learning</b>.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact" data-de="Kontakt aufnehmen" data-en="Get in touch">Kontakt aufnehmen</a>
+      <a class="btn btn-ghost" href="#projects" data-de="Werke ansehen" data-en="See selected work">Werke ansehen</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2 data-de="Profil" data-en="Profile">Profil</h2>
+      <span class="sec-idx mono">01 / PROFIL</span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p data-de="Ich baue Geschäft an der Schnittstelle von Strategie, Vertrieb und Technologie. Bei <b>Bitpanda</b> habe ich als Lead Business Development &amp; Partnerships den deutschen Markteintritt verantwortet — inklusive BaFin-Lizenzprozess — und das Retail-Geschäft von 2022 bis 2024 skaliert: über eine Million Neukunden, verdreifachter Marktanteil, Finanzziele 2024 um 120&nbsp;% übertroffen."
+           data-en="I build business at the intersection of strategy, sales and technology. At <b>Bitpanda</b>, as Lead Business Development &amp; Partnerships, I owned the German market entry — including the BaFin licensing process — and scaled the retail business from 2022 to 2024: over one million new customers, tripled market share, 2024 financial targets exceeded by 120%.">
+           Ich baue Geschäft an der Schnittstelle von Strategie, Vertrieb und Technologie. Bei <b>Bitpanda</b> habe ich als Lead Business Development &amp; Partnerships den deutschen Markteintritt verantwortet — inklusive BaFin-Lizenzprozess — und das Retail-Geschäft von 2022 bis 2024 skaliert: über eine Million Neukunden, verdreifachter Marktanteil, Finanzziele 2024 um 120&nbsp;% übertroffen.</p>
+        <p data-de="Mein Fundament: ein B.Sc. Economics (Political Economy) aus Heidelberg mit Postgraduate-Studien in Kopenhagen (Behavioural Finance, Financial Frictions) — 2026 ergänzt um das Data-Science-&amp;-AI-Bootcamp von Le Wagon. Ich denke in Zahlen, arbeite in Systemen und übersetze zwischen Business und Technik."
+           data-en="My foundation: a B.Sc. in Economics (Political Economy) from Heidelberg with postgraduate studies in Copenhagen (behavioural finance, financial frictions) — complemented in 2026 by Le Wagon's Data Science &amp; AI bootcamp. I think in numbers, work in systems, and translate between business and technology.">
+           Mein Fundament: ein B.Sc. Economics (Political Economy) aus Heidelberg mit Postgraduate-Studien in Kopenhagen (Behavioural Finance, Financial Frictions) — 2026 ergänzt um das Data-Science-&amp;-AI-Bootcamp von Le Wagon. Ich denke in Zahlen, arbeite in Systemen und übersetze zwischen Business und Technik.</p>
+      </div>
+      <div class="fact-list">
+        <div class="fact"><span class="k">BASE</span><span class="v">Berlin, DE</span></div>
+        <div class="fact"><span class="k">FOCUS</span><span class="v">BD · Growth · Product · Data</span></div>
+        <div class="fact"><span class="k">STACK</span><span class="v">Python · SQL · Scikit-Learn · GCP</span></div>
+        <div class="fact"><span class="k">TOOLS</span><span class="v">Salesforce · Tableau · HubSpot</span></div>
+        <div class="fact"><span class="k">LANG</span><span class="v">DE · EN (C2) · FR (B2)</span></div>
+        <div class="fact"><span class="k">STATUS</span><span class="v" data-de="Offen für Projekte &amp; Rollen" data-en="Open to projects &amp; roles">Offen für Projekte &amp; Rollen</span></div>
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <h3 data-de="Geschäft aufbauen" data-en="Building business">Geschäft aufbauen</h3>
+        <p data-de="Go-to-Market, Lizenzprozesse, Partnerschaften, volle Sales-Zyklen — von der ersten Marktanalyse bis zum unterschriebenen Vertrag." data-en="Go-to-market, licensing, partnerships, full sales cycles — from first market analysis to signed contract.">Go-to-Market, Lizenzprozesse, Partnerschaften, volle Sales-Zyklen — von der ersten Marktanalyse bis zum unterschriebenen Vertrag.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-de="Mit Daten entscheiden" data-en="Deciding with data">Mit Daten entscheiden</h3>
+        <p data-de="Statistische Modellierung, Machine Learning, Predictive Analytics — Hypothesen bauen, testen und in Produkte übersetzen." data-en="Statistical modelling, machine learning, predictive analytics — building hypotheses, testing them, turning them into products.">Statistische Modellierung, Machine Learning, Predictive Analytics — Hypothesen bauen, testen und in Produkte übersetzen.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-de="Lange Strecken durchhalten" data-en="Going the distance">Lange Strecken durchhalten</h3>
+        <p data-de="Ob Lizenzverfahren, Skalierungsphase oder Alpenpass: Ausdauer, Struktur und Gelassenheit auf langen Strecken sind mein Arbeitsmodus." data-en="Whether a licensing process, a scaling phase or an Alpine pass: endurance, structure and composure over long distances are how I work.">Ob Lizenzverfahren, Skalierungsphase oder Alpenpass: Ausdauer, Struktur und Gelassenheit auf langen Strecken sind mein Arbeitsmodus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2 data-de="Stationen" data-en="Experience">Stationen</h2>
+      <span class="sec-idx mono">02 / CV</span>
+    </div>
+    <div class="timeline">
+      <div class="t-row">
+        <div class="t-when">2025 — 2026</div>
+        <div>
+          <div class="t-role" data-de="Data Science &amp; AI — gezielte Weiterbildung" data-en="Data Science &amp; AI — deliberate upskilling">Data Science &amp; AI — gezielte Weiterbildung</div>
+          <div class="t-org">Le Wagon · Berlin</div>
+          <ul class="t-desc">
+            <li data-de="9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment" data-en="9-week full-time bootcamp: machine learning, deep learning, product development &amp; deployment">9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment</li>
+            <li data-de="Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Werke)" data-en="Capstone: MarathonIQ — ML prediction app, live deployed (see Work)">Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Werke)</li>
+            <li data-de="Parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)" data-en="In parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)">Parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-when">01/2022 — 09/2025</div>
+        <div>
+          <div class="t-role">Lead — Business Development &amp; Partnerships</div>
+          <div class="t-org">Bitpanda GmbH · Berlin</div>
+          <ul class="t-desc">
+            <li data-de="Go-to-Market-Strategie für Deutschland entwickelt und BaFin-Lizenzprozess geführt" data-en="Built the German go-to-market strategy and led the BaFin licensing process">Go-to-Market-Strategie für Deutschland entwickelt und BaFin-Lizenzprozess geführt</li>
+            <li data-de="Launch &amp; Skalierung des deutschen Retail-Geschäfts (2022–2024)" data-en="Launched and scaled the German retail business (2022–2024)">Launch &amp; Skalierung des deutschen Retail-Geschäfts (2022–2024)</li>
+            <li data-de="Dez. '22 – Dez. '24: über 1 Mio. Neukunden, Marktanteil verdreifacht, Finanzziele 2024 um 120 % übertroffen" data-en="Dec '22 – Dec '24: 1M+ new customers, tripled market share, exceeded 2024 financial targets by 120%">Dez. '22 – Dez. '24: über 1 Mio. Neukunden, Marktanteil verdreifacht, Finanzziele 2024 um 120 % übertroffen</li>
+            <li data-de="Strategische Partnerschaft mit dem FC Bayern München gemanagt: Medienkampagnen, Kunden- &amp; Partner-Events in der Allianz Arena" data-en="Managed the strategic FC Bayern Munich partnership: media campaigns, client &amp; partner events at Allianz Arena">Strategische Partnerschaft mit dem FC Bayern München gemanagt: Medienkampagnen, Kunden- &amp; Partner-Events in der Allianz Arena</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-when">06/2020 — 12/2021</div>
+        <div>
+          <div class="t-role">Growth Executive — Revenue Operations</div>
+          <div class="t-org">Stripe GmbH · Berlin</div>
+          <ul class="t-desc">
+            <li data-de="Business Development D/A/CH: Vertikalisierung, volle Sales-Zyklen, Vertragsabschlüsse" data-en="Business development in D/A/CH: verticalisation, full sales cycles, contract signing">Business Development D/A/CH: Vertikalisierung, volle Sales-Zyklen, Vertragsabschlüsse</li>
+            <li data-de="Erstes Jahr: 9-stelliges Transaktionsvolumen ($), 7-stelliger Operating Revenue ($), 70+ Neukunden" data-en="First year: 9-digit transaction volume ($), 7-digit operating revenue ($), 70+ new businesses">Erstes Jahr: 9-stelliges Transaktionsvolumen ($), 7-stelliger Operating Revenue ($), 70+ Neukunden</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-when">10/2018 — 04/2020</div>
+        <div>
+          <div class="t-role">Graduate &amp; Senior Associate — Global Sales Operations</div>
+          <div class="t-org">Workday Ltd. · Dublin</div>
+          <ul class="t-desc">
+            <li data-de="Business Development &amp; Pipeline-Generierung D/A/CH im Financial-Services-Sektor" data-en="Business development &amp; pipeline generation for D/A/CH financial services">Business Development &amp; Pipeline-Generierung D/A/CH im Financial-Services-Sektor</li>
+            <li data-de="Sales Operations, Pre-Sales, Market Research, Salesforce CRM &amp; Reporting" data-en="Sales operations, pre-sales, market research, Salesforce CRM &amp; reporting">Sales Operations, Pre-Sales, Market Research, Salesforce CRM &amp; Reporting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-when">2016 — 2018</div>
+        <div>
+          <div class="t-role" data-de="Frühe Stationen — Consulting, Diplomatie, Banking" data-en="Early roles — consulting, diplomacy, banking">Frühe Stationen — Consulting, Diplomatie, Banking</div>
+          <div class="t-org">QVARTZ (heute Bain Nordics) · SAP SE · Deutsche Botschaft Sofia · Deutsche Bank</div>
+          <ul class="t-desc">
+            <li data-de="QVARTZ, Kopenhagen: Consulting Support &amp; Go-to-Market D/A/CH" data-en="QVARTZ, Copenhagen: consulting support &amp; D/A/CH go-to-market">QVARTZ, Kopenhagen: Consulting Support &amp; Go-to-Market D/A/CH</li>
+            <li data-de="SAP, Walldorf: Go-to-Market FSI D/A/CH, ~50 Strategie-Workshops mit Schlüsselkunden geplant und durchgeführt" data-en="SAP, Walldorf: FSI go-to-market D/A/CH, planned and ran ~50 strategy workshops with key accounts">SAP, Walldorf: Go-to-Market FSI D/A/CH, ~50 Strategie-Workshops mit Schlüsselkunden geplant und durchgeführt</li>
+            <li data-de="Deutsche Botschaft Sofia: Wirtschafts- &amp; Politikanalysen, Vertretung auf Panels und Konferenzen" data-en="German Embassy Sofia: economic &amp; policy analysis, representation at panels and conferences">Deutsche Botschaft Sofia: Wirtschafts- &amp; Politikanalysen, Vertretung auf Panels und Konferenzen</li>
+            <li data-de="Deutsche Bank, Frankfurt: Optimierung &amp; Automatisierung von KYC-Onboarding-Prozessen" data-en="Deutsche Bank, Frankfurt: optimising &amp; automating KYC onboarding processes">Deutsche Bank, Frankfurt: Optimierung &amp; Automatisierung von KYC-Onboarding-Prozessen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-when">2013 — 2018</div>
+        <div>
+          <div class="t-role" data-de="Ausbildung" data-en="Education">Ausbildung</div>
+          <div class="t-org" data-de="Universität Heidelberg · Universität Kopenhagen" data-en="Heidelberg University · University of Copenhagen">Universität Heidelberg · Universität Kopenhagen</div>
+          <ul class="t-desc">
+            <li data-de="B.Sc. Economics (Political Economy), Heidelberg — Thesis zu Finanztransaktionssteuern, Preisvolatilität und Handelsvolumen in begrenzt rationalen Umgebungen" data-en="B.Sc. Economics (Political Economy), Heidelberg — thesis on financial transaction taxes, price volatility and trading volume in bounded-rational environments">B.Sc. Economics (Political Economy), Heidelberg — Thesis zu Finanztransaktionssteuern, Preisvolatilität und Handelsvolumen in begrenzt rationalen Umgebungen</li>
+            <li data-de="Postgraduate-Studien Kopenhagen: Behavioural Finance, Financial Frictions, Private Equity, Economics of Banking" data-en="Postgraduate studies in Copenhagen: behavioural finance, financial frictions, private equity, economics of banking">Postgraduate-Studien Kopenhagen: Behavioural Finance, Financial Frictions, Private Equity, Economics of Banking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2 data-de="Ausgewählte Werke" data-en="Selected work">Ausgewählte Werke</h2>
+      <span class="sec-idx mono">03 / WERKE</span>
+    </div>
+    <div class="cards">
+      <a class="card" href="https://marathoniq.streamlit.app/" target="_blank" rel="noopener">
+        <span class="tag">ML Product · Live</span>
+        <h3>MarathonIQ</h3>
+        <p data-de="Marathon-Zielzeit-Vorhersage mit erklärbarem Machine Learning (XGBoost + SHAP). Von der Idee über Modellarchitektur und API bis zum Live-Deployment auf GCP Cloud Run &amp; Streamlit — Capstone des Le-Wagon-Bootcamps."
+           data-en="Marathon finish-time prediction with explainable machine learning (XGBoost + SHAP). From idea through model architecture and API to live deployment on GCP Cloud Run &amp; Streamlit — Le Wagon capstone project.">
+           Marathon-Zielzeit-Vorhersage mit erklärbarem Machine Learning (XGBoost + SHAP). Von der Idee über Modellarchitektur und API bis zum Live-Deployment auf GCP Cloud Run &amp; Streamlit — Capstone des Le-Wagon-Bootcamps.</p>
+        <div class="meta">Python · XGBoost · SHAP · GCP <span class="link">→ marathoniq.streamlit.app</span></div>
+      </a>
+      <a class="card" href="https://www.youtube.com/watch?v=4n_st9ynWeU" target="_blank" rel="noopener">
+        <span class="tag">Partnership · Campaign</span>
+        <h3>FC Bayern München × Bitpanda</h3>
+        <p data-de="Management der strategischen Partnerschaft zwischen dem FC Bayern und Bitpanda: Medienkampagnen konzipiert und gesteuert, Kunden- und Partner-Events in der Allianz Arena verantwortet."
+           data-en="Managed the strategic partnership between FC Bayern and Bitpanda: directed media campaigns and hosted client and partner events at Allianz Arena.">
+           Management der strategischen Partnerschaft zwischen dem FC Bayern und Bitpanda: Medienkampagnen konzipiert und gesteuert, Kunden- und Partner-Events in der Allianz Arena verantwortet.</p>
+        <div class="meta">Brand · Media · Events <span class="link">→ Kampagnenfilm</span></div>
+      </a>
+      <div class="card">
+        <span class="tag">Research · Thesis</span>
+        <h3 data-de="Finanztransaktionssteuer &amp; Spekulation" data-en="Financial transaction tax &amp; speculation">Finanztransaktionssteuer &amp; Spekulation</h3>
+        <p data-de="Bachelorarbeit zur Wirkung von Finanztransaktionssteuern auf Preisvolatilität und Handelsvolumen — modelliert in einer begrenzt rationalen, agentenbasierten Umgebung. Behavioural Finance × agentenbasierte Ökonomik."
+           data-en="Bachelor's thesis on the effects of financial transaction taxes on price volatility and trading volume — modelled in a bounded-rational, agent-based environment. Behavioural finance × agent-based economics.">
+           Bachelorarbeit zur Wirkung von Finanztransaktionssteuern auf Preisvolatilität und Handelsvolumen — modelliert in einer begrenzt rationalen, agentenbasierten Umgebung. Behavioural Finance × agentenbasierte Ökonomik.</p>
+        <div class="meta" data-de="Universität Heidelberg · Economics" data-en="Heidelberg University · Economics">Universität Heidelberg · Economics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="personal" id="personal">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2 data-de="Persönliche Projekte" data-en="Personal projects">Persönliche Projekte</h2>
+      <span class="sec-idx mono">04 / PERSÖNLICH</span>
+    </div>
+    <p class="personal-intro"
+       data-de="Neben der Arbeit plane, fahre und dokumentiere ich <b>Langstrecken-Bikepacking-Touren</b> — als Film, Text und Daten. Die Touren sind Ausgleich und Werkstatt zugleich: Hier entstehen die Geschichten, die Disziplin und ein wachsendes kreatives Archiv — mit Raum für mehr."
+       data-en="Alongside work I plan, ride and document <b>long-distance bikepacking tours</b> — in film, writing and data. The tours are both balance and workshop: this is where the stories, the discipline and a growing creative archive come from — with room for more.">
+       Neben der Arbeit plane, fahre und dokumentiere ich <b>Langstrecken-Bikepacking-Touren</b> — als Film, Text und Daten. Die Touren sind Ausgleich und Werkstatt zugleich: Hier entstehen die Geschichten, die Disziplin und ein wachsendes kreatives Archiv — mit Raum für mehr.</p>
+
+    <div class="elev" aria-hidden="true">
+      <svg viewBox="0 0 1440 74" preserveAspectRatio="none">
+        <path d="M0,60 L90,52 L180,56 L260,42 L340,48 L430,30 L520,38 L610,22 L700,30 L790,14 L880,26 L960,10 L1050,22 L1140,7 L1230,18 L1320,4 L1440,12"
+              fill="none" stroke="#FF5A1F" stroke-width="2"/>
+        <path d="M0,60 L90,52 L180,56 L260,42 L340,48 L430,30 L520,38 L610,22 L700,30 L790,14 L880,26 L960,10 L1050,22 L1140,7 L1230,18 L1320,4 L1440,12 L1440,74 L0,74 Z"
+              fill="rgba(11,93,78,.06)"/>
+      </svg>
+    </div>
+
+    <div class="tours">
+      <div class="tour">
+        <span class="code">TdA · 2025</span>
+        <div>
+          <h3>Tour d'Allemagne</h3>
+          <p data-de="Berlin → Tübingen, elf Tage allein auf dem Rad — von Zuhause in die Heimat. Dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung.“ (Konzept, Dreh, Schnitt in Final Cut Pro)."
+             data-en="Berlin → Tübingen, eleven days alone on the bike — from home to Heimat. Documented in the short film “Von Zuhause in die Heimat. Eine Selbstbegegnung.” (concept, filming, editing in Final Cut Pro).">
+             Berlin → Tübingen, elf Tage allein auf dem Rad — von Zuhause in die Heimat. Dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung.“ (Konzept, Dreh, Schnitt in Final Cut Pro).</p>
+        </div>
+        <div class="stats"><strong>892 km</strong> · 9.225 Hm<br>61 h 45 min <span data-de="Sattelzeit" data-en="saddle time">Sattelzeit</span></div>
+      </div>
+      <div class="tour">
+        <span class="code">TdJ · 2026</span>
+        <div>
+          <h3>Tour de Japan</h3>
+          <p data-de="28 Tage durch Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Kanazawa → Hokkaido. Gravel-Bikepacking mit Rinko-Logistik und Shinkansen-Transfers — der Film dazu ist in Arbeit."
+             data-en="28 days across Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Kanazawa → Hokkaido. Gravel bikepacking with rinko logistics and Shinkansen transfers — the film is in the making.">
+             28 Tage durch Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Kanazawa → Hokkaido. Gravel-Bikepacking mit Rinko-Logistik und Shinkansen-Transfers — der Film dazu ist in Arbeit.</p>
+        </div>
+        <div class="stats"><strong>28 <span data-de="Tage" data-en="days">Tage</span></strong> · Juni 2026<br><span data-de="Film in Arbeit" data-en="film in progress">Film in Arbeit</span></div>
+      </div>
+      <div class="tour">
+        <span class="code">TdAlpen</span>
+        <div>
+          <h3>Tour de Alpen</h3>
+          <p data-de="Das nächste Kapitel: Tübingen → Alpen → Comer See in rund acht Tagen, mit Como-Loop-Finale und Rückreise via Zürich."
+             data-en="The next chapter: Tübingen → Alps → Lake Como in roughly eight days, with a Como loop finale and return via Zurich.">
+             Das nächste Kapitel: Tübingen → Alpen → Comer See in rund acht Tagen, mit Como-Loop-Finale und Rückreise via Zürich.</p>
+        </div>
+        <div class="stats"><span data-de="in Planung" data-en="in planning">in Planung</span></div>
+      </div>
+    </div>
+
+    <p class="personal-note"
+       data-de="Außerdem: Marathonläufer (u. a. Berlin Marathon 2023 als Charity-Fundraiser für Alive &amp; Kicking) — und Ursprung der Idee hinter MarathonIQ."
+       data-en="Also: marathon runner (including the 2023 Berlin Marathon as a charity fundraiser for Alive &amp; Kicking) — and the origin of the idea behind MarathonIQ.">
+       Außerdem: Marathonläufer (u. a. Berlin Marathon 2023 als Charity-Fundraiser für Alive &amp; Kicking) — und Ursprung der Idee hinter MarathonIQ.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <div class="sec-head">
+      <h2 data-de="Lassen Sie uns sprechen." data-en="Let's talk.">Lassen Sie uns sprechen.</h2>
+      <span class="sec-idx mono">05 / KONTAKT</span>
+    </div>
+    <p class="lede"
+       data-de="Ob Rolle, Projekt, Partnerschaft oder eine Idee, die beides verbindet — ich freue mich über Ihre Nachricht."
+       data-en="Whether it's a role, a project, a partnership or an idea that connects them — I look forward to hearing from you.">
+       Ob Rolle, Projekt, Partnerschaft oder eine Idee, die beides verbindet — ich freue mich über Ihre Nachricht.</p>
+    <a class="mail" href="mailto:christoph.friedrich.koch@gmail.com">christoph.friedrich.koch@gmail.com</a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/christoph-friedrich-koch" target="_blank" rel="noopener me">LinkedIn ↗</a>
+      <a href="https://github.com/cfk44" target="_blank" rel="noopener me">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Christoph Friedrich Koch</span>
+    <span>Berlin · Space Grotesk &amp; JetBrains Mono</span>
+  </div>
+</footer>
+
+<script>
+  // ---- Language toggle (DE default) ----
+  const toggle = document.getElementById('langToggle');
+  let lang = 'de';
+  function applyLang(l){
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-de]').forEach(el=>{
+      el.innerHTML = el.getAttribute('data-' + l);
+    });
+    toggle.textContent = l === 'de' ? 'EN' : 'DE';
+  }
+  toggle.addEventListener('click', ()=>{
+    lang = lang === 'de' ? 'en' : 'de';
+    applyLang(lang);
+  });
+
+  // ---- Scroll reveal (respects reduced motion) ----
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
+  if(prefersReduced){
+    reveals.forEach(el=>el.classList.add('in'));
+  }else{
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.1});
+    reveals.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>

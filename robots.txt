@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cfk44.github.io/sitemap.xml
+Sitemap: https://cfk.ventures/sitemap.xml

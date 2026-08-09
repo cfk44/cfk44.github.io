@@ -15,7 +15,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --porcelain:#F7F6F3;
@@ -43,53 +43,54 @@
   }
   .mono{font-family:'JetBrains Mono',monospace}
   a{color:inherit}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--porcelain);outline-offset:3px}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ---------- Nav ---------- */
   nav{
     position:sticky;top:0;z-index:50;
-    background:rgba(247,246,243,.88);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+    background:var(--green-deep);
+    border-bottom:1px solid var(--line-light);
   }
   .nav-inner{
     max-width:var(--maxw);margin:0 auto;padding:14px 24px;
     display:flex;align-items:center;justify-content:space-between;gap:16px;
   }
-  .nav-mark{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;color:var(--green)}  .nav-links{display:flex;gap:22px;align-items:center}
-  .nav-links a{font-size:14px;text-decoration:none;color:var(--mist);transition:color .2s}
-  .nav-links a:hover{color:var(--ink)}
+  .nav-mark{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;color:var(--porcelain);display:flex;align-items:center;gap:10px}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{font-size:14px;text-decoration:none;color:rgba(247,246,243,.6);transition:color .2s}
+  .nav-links a:hover{color:var(--porcelain)}
   .lang-toggle{
     font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;
-    border:1px solid var(--line);border-radius:999px;background:transparent;
-    padding:5px 12px;cursor:pointer;color:var(--ink);transition:border-color .2s;
+    border:1px solid var(--line-light);border-radius:999px;background:transparent;
+    padding:5px 12px;cursor:pointer;color:var(--porcelain);transition:border-color .2s;
   }
-  .lang-toggle:hover{border-color:var(--ink)}
+  .lang-toggle:hover{border-color:var(--porcelain)}
   @media(max-width:680px){.nav-links a:not(.keep){display:none}}
 
   /* ---------- Hero ---------- */
-  header.hero{padding:104px 0 88px;border-bottom:1px solid var(--line)}
+  header.hero{padding:104px 0 88px;background:var(--green-deep);border-bottom:none}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--green);margin-bottom:26px;
+    text-transform:uppercase;color:var(--porcelain);margin-bottom:26px;
   }
   .hero h1{
     font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:700;
-    letter-spacing:-.02em;max-width:19ch;
+    letter-spacing:-.02em;max-width:19ch;color:var(--porcelain);
   }
-  .hero h1 em{font-style:normal;color:var(--green)}
-  .hero .sub{margin-top:28px;max-width:58ch;font-size:1.12rem;color:var(--body)}
-  .hero .sub b{color:var(--ink)}
+  .hero h1 em{font-style:normal;color:var(--signal)}
+  .hero .sub{margin-top:28px;max-width:58ch;font-size:1.12rem;color:rgba(247,246,243,.75)}
+  .hero .sub b{color:var(--porcelain)}
   .hero .cta-row{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .btn{
     font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;
     text-decoration:none;padding:11px 20px;border-radius:6px;transition:transform .15s ease, background .2s, color .2s;
   }
   .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--green);color:var(--porcelain)}
-  .btn-primary:hover{background:var(--green-deep)}
-  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
-  .btn-ghost:hover{background:var(--ink);color:var(--porcelain)}
+  .btn-primary{background:var(--porcelain);color:var(--ink)}
+  .btn-primary:hover{background:var(--white);color:var(--ink)}
+  .btn-ghost{border:1px solid var(--porcelain);color:var(--porcelain)}
+  .btn-ghost:hover{background:var(--porcelain);color:var(--ink)}
 
   /* ---------- Sections ---------- */
   section{padding:84px 0}
@@ -140,39 +141,6 @@
   .card .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mist);border-top:1px solid var(--line);padding-top:14px}
   .card .meta .link{color:var(--green)}
 
-  /* ---------- Personal projects ---------- */
-  .personal{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .personal-intro{max-width:62ch;color:var(--body);margin-bottom:56px}
-  .personal-intro b{color:var(--ink)}
-  .elev{margin:0 0 56px;line-height:0}
-  .elev svg{width:100%;height:74px;display:block}
-  .tours{border-top:1px solid var(--line)}
-  .tour{
-    display:grid;grid-template-columns:130px 1fr auto;gap:26px;align-items:baseline;
-    padding:26px 0;border-bottom:1px solid var(--line);
-  }
-  .tour .code{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--signal);letter-spacing:.05em}
-  .tour h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
-  .tour p{font-size:.93rem;color:var(--body);margin-top:6px;max-width:56ch}
-  .tour .stats{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mist);
-    text-align:right;line-height:1.9;white-space:nowrap;
-  }
-  .tour .stats strong{color:var(--ink);font-weight:500}
-  .tour a.fp{color:var(--signal);text-decoration:none;border-bottom:1px solid rgba(107,28,35,.4)}
-  .tour a.fp:hover{border-bottom-color:var(--signal)}
-  @media(max-width:760px){
-    .tour{grid-template-columns:1fr;gap:8px}
-    .tour .stats{text-align:left;white-space:normal}
-  }
-  .personal-note{margin-top:44px;font-size:.93rem;color:var(--mist);max-width:64ch}
-
-  .film{max-width:820px;margin:56px auto 0}
-  .film .tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:10px}
-  .film h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em;margin-bottom:18px}
-  .film .frame{position:relative;aspect-ratio:16/9;max-width:820px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
-  .film .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-
   /* ---------- Contact ---------- */
   .contact{background:var(--green-deep);color:var(--porcelain)}
   .contact h2{max-width:24ch;color:var(--porcelain)}
@@ -206,16 +174,16 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-mark" href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-    <svg width="28" height="28" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#6B1C23"/><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>      <span style="display:flex;align-items:baseline;gap:0">
+    <a class="nav-mark" href="#top">
+      <svg width="28" height="28" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#6B1C23"/><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
+      <span style="display:flex;align-items:baseline;gap:0">
         <span>cfk</span><span style="color:#6B1C23">.v</span><span>entures</span>
       </span>
     </a>
     <div class="nav-links">
       <a href="#about" data-de="Profil" data-en="Profile">Profil</a>
       <a href="#work" data-de="Stationen" data-en="Experience">Stationen</a>
-      <a href="#projects" data-de="Werke" data-en="Work">Werke</a>
-      <a href="#personal" data-de="Persönliche Projekte" data-en="Personal projects">Persönliche Projekte</a>
+      <a href="#projects" data-de="Projekte" data-en="Projects">Projekte</a>
       <a class="keep" href="#contact" data-de="Kontakt" data-en="Contact">Kontakt</a>
       <button class="lang-toggle keep" id="langToggle" aria-label="Sprache wechseln / switch language">EN</button>
     </div>
@@ -224,7 +192,7 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow" data-de="Berlin · Business Development × Data Science" data-en="Berlin · Business Development × Data Science">Berlin · Business Development × Data Science</p>
+    <p class="eyebrow">TECH × GROWTH × STRATEGY</p>
     <h1 data-de="Christoph Friedrich Koch. Kommerzielle Strategie mit <em>Daten-Fundament</em>."
         data-en="Christoph Friedrich Koch. Commercial strategy with a <em>data foundation</em>.">
         Christoph Friedrich Koch. Kommerzielle Strategie mit <em>Daten-Fundament</em>.</h1>
@@ -234,7 +202,7 @@
        Acht Jahre Business Development, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday und SAP</b> — vom Go-to-Market über BaFin-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München. 2026 erweitert um ein Fundament in <b>Data Science &amp; Machine Learning</b>.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact" data-de="Kontakt aufnehmen" data-en="Get in touch">Kontakt aufnehmen</a>
-      <a class="btn btn-ghost" href="#projects" data-de="Werke ansehen" data-en="See selected work">Werke ansehen</a>
+      <a class="btn btn-ghost" href="#projects" data-de="Projekte ansehen" data-en="See selected projects">Projekte ansehen</a>
     </div>
   </div>
 </header>
@@ -247,7 +215,7 @@
     </div>
     <div class="about-grid">
       <div>
-        <p data-de="Ich baue Geschäft an der Schnittstelle von Strategie, Vertrieb und Technologie. Bei <b>Bitpanda</b> habe ich als Lead Business Development &amp; Partnerships den deutschen Markteintritt verantwortet — inklusive BaFin-Lizenzprozess — und das Retail-Geschäft von 2022 bis 2024 skaliert: über eine Million Neukunden, verdreifachter Marktanteil, Finanzziele 2024 um 120&nbsp;% übertroffen."
+        <p data-de="Ich baue Geschäft auf an der Schnittstelle von Strategie, Vertrieb und Technologie. Bei <b>Bitpanda</b> habe ich als Lead Business Development &amp; Partnerships den deutschen Markteintritt verantwortet — inklusive BaFin-Lizenzprozess — und das Retail-Geschäft von 2022 bis 2024 skaliert: über eine Million Neukunden, verdreifachter Marktanteil, Finanzziele 2024 um 120&nbsp;% übertroffen."
            data-en="I build business at the intersection of strategy, sales and technology. At <b>Bitpanda</b>, as Lead Business Development &amp; Partnerships, I owned the German market entry — including the BaFin licensing process — and scaled the retail business from 2022 to 2024: over one million new customers, tripled market share, 2024 financial targets exceeded by 120%.">
            Ich baue Geschäft auf an der Schnittstelle von Strategie, Vertrieb und Technologie. Bei <b>Bitpanda</b> habe ich als Lead Business Development &amp; Partnerships den deutschen Markteintritt verantwortet — inklusive BaFin-Lizenzprozess — und das Retail-Geschäft von 2022 bis 2024 skaliert: über eine Million Neukunden, verdreifachter Marktanteil, Finanzziele 2024 um 120&nbsp;% übertroffen.</p>
         <p data-de="Mein Fundament: ein B.Sc. Economics (Political Economy) aus Heidelberg mit Postgraduate-Studien in Kopenhagen (Behavioural Finance, Financial Frictions) — 2026 ergänzt um das Data-Science-&amp;-AI-Bootcamp von Le Wagon. Ich denke in Zahlen, arbeite in Systemen und übersetze zwischen Business und Technik."
@@ -294,7 +262,7 @@
           <div class="t-org">Le Wagon · Berlin</div>
           <ul class="t-desc">
             <li data-de="9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment" data-en="9-week full-time bootcamp: machine learning, deep learning, product development &amp; deployment">9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment</li>
-            <li data-de="Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Werke)" data-en="Capstone: MarathonIQ — ML prediction app, live deployed (see Work)">Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Werke)</li>
+            <li data-de="Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Projekte)" data-en="Capstone: MarathonIQ — ML prediction app, live deployed (see Projects)">Capstone: MarathonIQ — ML-Vorhersage-App, live deployed (s. Projekte)</li>
             <li data-de="Parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)" data-en="In parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)">Parallel: GRE (313/340), Cambridge C2 Proficiency (Grade A)</li>
           </ul>
         </div>
@@ -365,8 +333,8 @@
 <section id="projects" style="padding-top:0">
   <div class="wrap reveal">
     <div class="sec-head">
-      <h2 data-de="Ausgewählte Werke" data-en="Selected work">Ausgewählte Werke</h2>
-      <span class="sec-idx mono" data-de="03 / WERKE" data-en="03 / WORK">03 / WERKE</span>
+      <h2 data-de="Ausgewählte Projekte" data-en="Selected projects">Ausgewählte Projekte</h2>
+      <span class="sec-idx mono" data-de="03 / PROJEKTE" data-en="03 / PROJECTS">03 / PROJEKTE</span>
     </div>
     <div class="cards">
       <a class="card" href="https://marathoniq.streamlit.app/" target="_blank" rel="noopener">
@@ -385,75 +353,15 @@
            Management der strategischen Partnerschaft zwischen dem FC Bayern und Bitpanda: Medienkampagnen konzipiert und gesteuert, Kunden- und Partner-Events in der Allianz Arena verantwortet.</p>
         <div class="meta">Brand · Media · Events <span class="link" data-de="→ Kampagnenfilm" data-en="→ Campaign film">→ Kampagnenfilm</span></div>
       </a>
-      <div class="card">
-        <span class="tag">Research · Thesis</span>
-        <h3 data-de="Finanztransaktionssteuer &amp; Spekulation" data-en="Financial transaction tax &amp; speculation">Finanztransaktionssteuer &amp; Spekulation</h3>
-        <p data-de="Bachelorarbeit zur Wirkung von Finanztransaktionssteuern auf Preisvolatilität und Handelsvolumen — modelliert in einer begrenzt rationalen, agentenbasierten Umgebung. Behavioural Finance × agentenbasierte Ökonomik."
-           data-en="Bachelor's thesis on the effects of financial transaction taxes on price volatility and trading volume — modelled in a bounded-rational, agent-based environment. Behavioural finance × agent-based economics.">
-           Bachelorarbeit zur Wirkung von Finanztransaktionssteuern auf Preisvolatilität und Handelsvolumen — modelliert in einer begrenzt rationalen, agentenbasierten Umgebung. Behavioural Finance × agentenbasierte Ökonomik.</p>
-        <div class="meta" data-de="Universität Heidelberg · Economics" data-en="Heidelberg University · Economics">Universität Heidelberg · Economics</div>
-      </div>
+      <a class="card" href="https://www.youtube.com/watch?v=cJJCac_i7fo" target="_blank" rel="noopener">
+        <span class="tag">Bikepacking · Film</span>
+        <h3>Tour d'Allemagne</h3>
+        <p data-de="Berlin → Tübingen: 892 km, 9.225 Hm, elf Tage auf dem Rad — von Zuhause in die Heimat. Selbst geplant, gefahren und dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung." (Konzept, Dreh, Schnitt in Final Cut Pro)."
+           data-en="Berlin → Tübingen: 892 km, 9,225 m of climbing, eleven days on the bike — from home to Heimat. Self-planned, ridden and documented in the short film 'Von Zuhause in die Heimat. Eine Selbstbegegnung.' (concept, filming, editing in Final Cut Pro).">
+           Berlin → Tübingen: 892 km, 9.225 Hm, elf Tage auf dem Rad — von Zuhause in die Heimat. Selbst geplant, gefahren und dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung." (Konzept, Dreh, Schnitt in Final Cut Pro).</p>
+        <div class="meta">892 km · 9.225 Hm · Final Cut Pro <span class="link" data-de="→ Kurzfilm" data-en="→ Short film">→ Kurzfilm</span></div>
+      </a>
     </div>
-  </div>
-</section>
-
-<section class="personal" id="personal">
-  <div class="wrap reveal">
-    <div class="sec-head">
-      <h2 data-de="Persönliche Projekte" data-en="Personal projects">Persönliche Projekte</h2>
-      <span class="sec-idx mono" data-de="04 / PERSÖNLICH" data-en="04 / PERSONAL">04 / PERSÖNLICH</span>
-    </div>
-    <p class="personal-intro"
-       data-de="Neben der Arbeit plane, fahre und dokumentiere ich <b>Langstrecken-Bikepacking-Touren</b> — als Film, Text und Daten. Die Touren sind Ausgleich und Werkstatt zugleich: Hier entstehen die Geschichten, die Disziplin und ein wachsendes kreatives Archiv — mit Raum für mehr."
-       data-en="Alongside work I plan, ride and document <b>long-distance bikepacking tours</b> — in film, writing and data. The tours are both balance and workshop: this is where the stories, the discipline and a growing creative archive come from — with room for more.">
-       Neben der Arbeit plane, fahre und dokumentiere ich <b>Langstrecken-Bikepacking-Touren</b> — als Film, Text und Daten. Die Touren sind Ausgleich und Werkstatt zugleich: Hier entstehen die Geschichten, die Disziplin und ein wachsendes kreatives Archiv — mit Raum für mehr.</p>
-
-    <div class="tours">
-      <div class="tour">
-        <span class="code">TdA · 2025</span>
-        <div>
-          <h3>Tour d'Allemagne</h3>
-          <p data-de="Berlin → Tübingen, elf Tage auf dem Rad — von Zuhause in die Heimat. Dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung.“ (Konzept, Dreh, Schnitt in Final Cut Pro)."
-             data-en="Berlin → Tübingen, eleven days on the bike — from home to Heimat. Documented in the short film “Von Zuhause in die Heimat. Eine Selbstbegegnung.” (concept, filming, editing in Final Cut Pro).">
-             Berlin → Tübingen, elf Tage allein auf dem Rad — von Zuhause in die Heimat. Dokumentiert im Kurzfilm „Von Zuhause in die Heimat. Eine Selbstbegegnung.“ (Konzept, Dreh, Schnitt in Final Cut Pro).</p>
-        </div>
-        <div class="stats"><strong>892 km</strong> · 9.225 Hm<br>61 h 45 min <span data-de="Sattelzeit" data-en="saddle time">Sattelzeit</span></div>
-      </div>
-      <div class="tour">
-        <span class="code">TdJ · 2026</span>
-        <div>
-          <h3>Tour du Japon</h3>
-          <p data-de="28 Tage durch Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Osaka → Kanazawa → Hokkaido. Gravel-Bikepacking mit Rinko-Logistik und Shinkansen-Transfers — der Film dazu ist in Arbeit. &lt;a class=&quot;fp&quot; href=&quot;https://findpenguins.com/chriscook/trip/tour-de-japon&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;→ Reiseblog&lt;/a&gt;"
-             data-en="28 days across Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Osaka → Kanazawa → Hokkaido. Gravel bikepacking with rinko logistics and Shinkansen transfers — the film is in the making. &lt;a class=&quot;fp&quot; href=&quot;https://findpenguins.com/chriscook/trip/tour-de-japon&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;→ Travel blog&lt;/a&gt;">
-             28 Tage durch Japan: Tokyo → Kyushu → Shimanami Kaido → Shikoku → Osaka → Kanazawa → Hokkaido. Gravel-Bikepacking mit Rinko-Logistik und Shinkansen-Transfers — der Film dazu ist in Arbeit. <a class="fp" href="https://findpenguins.com/chriscook/trip/tour-de-japon" target="_blank" rel="noopener">→ Reiseblog</a></p>
-        </div>
-        <div class="stats"><strong>28 <span data-de="Tage" data-en="days">Tage</span></strong> · 2026<br><span data-de="Film in Arbeit" data-en="film in progress">Film in Arbeit</span></div>
-      </div>
-      <div class="tour">
-        <span class="code">TdAlpes</span>
-        <div>
-          <h3>Tour d'Alpes</h3>
-          <p data-de="tba" data-en="tba">tba</p>
-        </div>
-        <div class="stats"><span data-de="in Planung" data-en="in planning">in Planung</span></div>
-      </div>
-    </div>
-
-    <div class="film">
-      <span class="tag" data-de="Film · TdA 2025" data-en="Film · TdA 2025">Film · TdA 2025</span>
-      <h3 data-de="Von Zuhause in die Heimat. Eine Selbstbegegnung." data-en="Von Zuhause in die Heimat. Eine Selbstbegegnung.">Von Zuhause in die Heimat. Eine Selbstbegegnung.</h3>
-      <div class="frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/cJJCac_i7fo"
-                title="Von Zuhause in die Heimat — Tour d'Allemagne Kurzfilm"
-                loading="lazy" allowfullscreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-      </div>
-    </div>
-
-    <p class="personal-note"
-       data-de="Außerdem: Marathonläufer (u. a. Berlin Marathon 2023 als Charity-Fundraiser für Alive &amp; Kicking) — und Ursprung der Idee hinter MarathonIQ."
-       data-en="Also: marathon runner (including the 2023 Berlin Marathon as a charity fundraiser for Alive &amp; Kicking) — and the origin of the idea behind MarathonIQ.">
-       Außerdem: Marathonläufer (u. a. Berlin Marathon 2023 als Charity-Fundraiser für Alive &amp; Kicking) — und Ursprung der Idee hinter MarathonIQ.</p>
   </div>
 </section>
 
@@ -461,7 +369,7 @@
   <div class="wrap reveal">
     <div class="sec-head">
       <h2 data-de="Lassen Sie uns sprechen." data-en="Let's talk.">Lassen Sie uns sprechen.</h2>
-      <span class="sec-idx mono" data-de="05 / KONTAKT" data-en="05 / CONTACT">05 / KONTAKT</span>
+      <span class="sec-idx mono" data-de="04 / KONTAKT" data-en="04 / CONTACT">04 / KONTAKT</span>
     </div>
     <p class="lede"
        data-de="Ob Rolle, Projekt, Partnerschaft oder eine Idee, die beides verbindet — ich freue mich über Ihre Nachricht."

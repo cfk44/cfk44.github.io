@@ -9,7 +9,7 @@
 <meta property="og:title" content="Christoph Friedrich Koch — Growth Advisor & Venture Builder">
 <meta property="og:description" content="Entrepreneurial Thinking - Data-driven Deciding - Commercial Doing">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://cfk.ventures/og-image-new.png">
+<meta property="og:image" content="https://cfk.ventures/og-image-burgund.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://cfk.ventures/">
@@ -26,9 +26,10 @@
     --ink:#141816;
     --green:#004225;
     --green-deep:#00301B;
-    --signal:#6B1C23;
+    --signal:#800020;
     --mist:#79817D;
     --body:#3B403E;
+    --lime:#A3E635;
     --line:rgba(20,24,22,.13);
     --line-light:rgba(247,246,243,.18);
     --maxw:1060px;
@@ -83,10 +84,10 @@
     content:'';
     position:absolute;inset:0;
     background:
-      linear-gradient(165deg, #6B1C23 0%, #4A1A20 25%, #1E2B1F 50%, #00301B 75%),
-      radial-gradient(ellipse 80% 60% at 10% -10%, rgba(107,28,35,0.7) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 80% at 90% 20%, rgba(107,28,35,0.25) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 30% 100%, rgba(0,66,37,0.5) 0%, transparent 70%);
+        linear-gradient(165deg, #800020 0%, #501A1E 25%, #1E2B1F 50%, #00301B 75%),
+        radial-gradient(ellipse 80% 60% at 10% -10%, rgba(128,0,32,0.7) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 90% 20%, rgba(128,0,32,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 30% 100%, rgba(0,66,37,0.5) 0%, transparent 70%);
   }
   header.hero .wrap{position:relative;z-index:1}
   .eyebrow{
@@ -94,28 +95,29 @@
     text-transform:uppercase;color:var(--porcelain);margin-bottom:26px;
   }
   .hero h1{
-    font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:700;
+    font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:500;
     letter-spacing:-.02em;max-width:19ch;color:var(--porcelain);
   }
   .hero-sub1{
-    font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.12;font-weight:700;
+    font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.12;font-weight:500;
     letter-spacing:-.015em;max-width:24ch;color:var(--porcelain);margin-top:8px;
   }
   .hero-sub2{
-    font-size:clamp(1.2rem,3vw,1.9rem);line-height:1.15;font-weight:700;
+    font-size:clamp(1.2rem,3vw,1.9rem);line-height:1.15;font-weight:400;
     letter-spacing:-.01em;max-width:30ch;color:var(--porcelain);margin-top:12px;
   }
   .hero-sub2{ color: rgba(247,246,243,0.85); }
+  .hero-sub2 em{font-style:normal;color:var(--lime)}
   .hero .cta-row{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .btn{
     font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;
     text-decoration:none;padding:11px 20px;border-radius:6px;transition:transform .15s ease, background .2s, color .2s;
   }
   .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--porcelain);color:var(--ink)}
-  .btn-primary:hover{background:var(--white);color:var(--ink)}
-  .btn-ghost{border:1px solid var(--porcelain);color:var(--porcelain)}
-  .btn-ghost:hover{background:var(--porcelain);color:var(--ink)}
+  .btn-primary{border:1px solid var(--lime);color:var(--lime);background:transparent}
+  .btn-primary:hover{background:var(--lime);color:var(--green-deep)}
+  .btn-ghost{border:1px solid var(--lime);color:var(--lime)}
+  .btn-ghost:hover{background:var(--lime);color:var(--green-deep)}
 
   /* ---------- Sections ---------- */
   section{padding:84px 0}
@@ -173,16 +175,16 @@
   .contact .lede{margin-top:16px;max-width:56ch;color:rgba(247,246,243,.75);font-size:1.02rem}
   .contact .mail{
     display:inline-block;margin-top:30px;font-family:'JetBrains Mono',monospace;
-    font-size:clamp(.95rem,2.4vw,1.25rem);color:var(--porcelain);text-decoration:none;
-    border-bottom:1px solid rgba(247,246,243,.4);padding-bottom:3px;transition:border-color .2s;
+    font-size:clamp(.95rem,2.4vw,1.25rem);color:var(--lime);text-decoration:none;
+    border-bottom:1px solid rgba(163,230,53,.4);padding-bottom:3px;transition:border-color .2s;
   }
-  .contact .mail:hover{border-bottom-color:var(--porcelain)}
+  .contact .mail:hover{border-bottom-color:var(--lime)}
   .socials{margin-top:36px;display:flex;gap:26px;flex-wrap:wrap}
   .socials a{
     font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.05em;
-    color:rgba(247,246,243,.7);text-decoration:none;transition:color .2s;
+    color:var(--lime);text-decoration:none;transition:opacity .2s;
   }
-  .socials a:hover{color:var(--porcelain)}
+  .socials a:hover{opacity:.7}
   footer{
     background:var(--green-deep);color:rgba(247,246,243,.45);
     border-top:1px solid var(--line-light);
@@ -200,7 +202,7 @@
 <nav>
   <div class="nav-inner">
     <a class="nav-mark" href="#top">
-      <svg width="28" height="28" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#6B1C23"/><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
+      <svg width="28" height="28" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#800020"/><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
       <span style="display:flex;align-items:baseline;gap:0">
         <span>cfk.ventures</span>
       </span>

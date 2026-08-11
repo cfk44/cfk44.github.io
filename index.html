@@ -9,7 +9,7 @@
 <meta property="og:title" content="Christoph Friedrich Koch — Growth Advisor & Venture Builder">
 <meta property="og:description" content="Entrepreneurial Thinking - Data-driven Deciding - Commercial Doing">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://cfk.ventures/og-image-final.png">
+<meta property="og:image" content="https://cfk.ventures/og-image-new.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://cfk.ventures/">
@@ -52,8 +52,8 @@
   /* ---------- Nav ---------- */
   nav{
     position:sticky;top:0;z-index:50;
-    background:var(--green-deep);
-    border-bottom:1px solid var(--line-light);
+    background:var(--signal);
+    border-bottom:none;
   }
   .nav-inner{
     max-width:var(--maxw);margin:0 auto;padding:14px 24px;
@@ -72,7 +72,23 @@
   @media(max-width:680px){.nav-links a:not(.keep){display:none}}
 
   /* ---------- Hero ---------- */
-  header.hero{padding:104px 0 88px;background:var(--green-deep);border-bottom:none}
+  header.hero{
+    padding:104px 0 88px;
+    background:var(--green-deep);
+    position:relative;
+    overflow:hidden;
+    border-bottom:none;
+  }
+  header.hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      linear-gradient(165deg, #6B1C23 0%, #4A1A20 25%, #1E2B1F 50%, #00301B 75%),
+      radial-gradient(ellipse 80% 60% at 10% -10%, rgba(107,28,35,0.7) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 80% at 90% 20%, rgba(107,28,35,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 30% 100%, rgba(0,66,37,0.5) 0%, transparent 70%);
+  }
+  header.hero .wrap{position:relative;z-index:1}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--porcelain);margin-bottom:26px;
@@ -89,7 +105,7 @@
     font-size:clamp(1.2rem,3vw,1.9rem);line-height:1.15;font-weight:700;
     letter-spacing:-.01em;max-width:30ch;color:var(--porcelain);margin-top:12px;
   }
-  .hero-sub2 em{font-style:normal;color:var(--signal)}
+  .hero-sub2{ color: rgba(247,246,243,0.85); }
   .hero .cta-row{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .btn{
     font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;
@@ -206,7 +222,7 @@
     <p class="hero-sub1">Growth Advisor & Venture Builder</p>
     <p class="hero-sub2"
       data-de="<em>Unternehmerisches</em> Denken<br><em>Datengetriebenes</em> Entscheiden<br><em>Kommerzielles</em> Handeln"
-      data-en="<em>Entrepreneurial</em> Thinking<br><em>Data-driven</em> Deciding<br><em>Commercial</em> Doing">
+      data-en="<em>Entrepreneurial</em> Mindset<br><em>Data-driven</em> Decisions<br><em>Commercial</em> Actions">
       <em>Unternehmerisches</em> Denken<br>
       <em>Datengetriebenes</em> Entscheiden<br>
       <em>Kommerzielles</em> Handeln
@@ -226,9 +242,9 @@
     </div>
     <div class="about-grid">
       <div>
-        <p data-de="Acht Jahre Business Development, Consulting, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday, Bain und SAP</b> — von B2B Go-to-Market über Fintech-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München."
+        <p data-de="Acht Jahre Business Development, Consulting, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday, Bain und SAP</b> — von Go-to-Market über Fintech-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München."
            data-en="Eight years of business development, consulting, growth &amp; partnerships at <b>Bitpanda, Stripe, Workday, Bain and SAP</b> — from Go-to-Market and Fintech licensing to the strategic partnership with FC Bayern Munich.">
-           Acht Jahre Business Development, Consulting, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday, Bain und SAP</b> — von B2B Go-to-Market über Fintech-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München.</p>
+           Acht Jahre Business Development, Consulting, Growth &amp; Partnerships bei <b>Bitpanda, Stripe, Workday, Bain und SAP</b> — von Go-to-Market über Fintech-Lizenzprozesse bis zur strategischen Partnerschaft mit dem FC Bayern München.</p>
         <p data-de="Mein Fundament: ein B.Sc. Economics aus Heidelberg mit Postgraduate-Studien in Kopenhagen (Behavioural Finance) — 2026 ergänzt um das <b>Data-Science-&amp;-AI-Bootcamp von Le Wagon.</b>"
            data-en="My foundation: a B.Sc. in Economics from Heidelberg with postgraduate studies in Copenhagen (Behavioural Finance) — complemented in 2026 by <b>Le Wagon's Data Science &amp; AI bootcamp.</b>">
            Mein Fundament: ein B.Sc. Economics aus Heidelberg mit Postgraduate-Studien in Kopenhagen (Behavioural Finance) — 2026 ergänzt um das <b>Data-Science-&amp;-AI-Bootcamp von Le Wagon.</b></p>

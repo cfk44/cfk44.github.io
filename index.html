@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christoph Friedrich Koch —  Growth Advisor & Venture Builder · Berlin</title>
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
-<meta name="description" content="Unternehmerisches Denken - Datengetriebenes Entscheiden - Kommerzielles Handeln.">
+<title>Christoph Friedrich Koch — Freelance Tech Advisor & Product Strategist · Berlin</title>
+<meta name="description" content="Christoph Friedrich Koch (CFK) — Growth Advisor & Venture Builder. Berlin. Bitpanda, Stripe, Workday, Bain, SAP.">
 <meta property="og:title" content="Christoph Friedrich Koch — Growth Advisor & Venture Builder">
-<meta property="og:description" content="Entrepreneurial Thinking - Data-driven Deciding - Commercial Doing">
+<meta property="og:description" content="Acht Jahre BD, Growth & Partnerships bei Bitpanda, Stripe, Workday und SAP — erweitert um ein Fundament in Data Science & AI. Berlin.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://cfk.ventures/og-image-logo.png">
+<meta property="og:image" content="https://cfk.ventures/og-image-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://cfk.ventures/">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://cfk.ventures/">
-<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,16 +27,16 @@
     --green:#004225;
     --green-deep:#00301B;
     --signal:#800020;
+    --lime:#A3E635;
     --mist:#79817D;
     --body:#3B403E;
-    --lime:#A3E635;
     --line:rgba(20,24,22,.13);
     --line-light:rgba(247,246,243,.18);
     --maxw:1060px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  @media (prefers-reduced-motion: reduce){
+  @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     *,*::before,*::after{animation:none!important;transition:none!important}
   }
@@ -51,68 +51,34 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
   /* ---------- Nav ---------- */
-  nav{
-    position:sticky;top:0;z-index:50;
-    background:var(--signal);
-    border-bottom:none;
-  }
-  .nav-inner{
-    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;
-  }
+  nav{position:sticky;top:0;z-index:50;background:var(--signal);border-bottom:none}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
   .nav-mark{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.04em;text-decoration:none;color:var(--porcelain);display:flex;align-items:center;gap:10px}
   .nav-links{display:flex;gap:22px;align-items:center}
   .nav-links a{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:rgba(247,246,243,.6);transition:color .2s}
   .nav-links a:hover{color:var(--porcelain)}
-  .lang-toggle{
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;
-    border:1px solid var(--line-light);border-radius:999px;background:transparent;
-    padding:5px 12px;cursor:pointer;color:var(--porcelain);transition:border-color .2s;
-  }
+  .lang-toggle{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;border:1px solid var(--line-light);border-radius:999px;background:transparent;padding:5px 12px;cursor:pointer;color:var(--porcelain);transition:border-color .2s}
   .lang-toggle:hover{border-color:var(--porcelain)}
   @media(max-width:680px){.nav-links a:not(.keep){display:none}}
 
   /* ---------- Hero ---------- */
-  header.hero{
-    padding:104px 0 88px;
-    background:var(--green-deep);
-    position:relative;
-    overflow:hidden;
-    border-bottom:none;
-  }
+  header.hero{padding:104px 0 88px;background:var(--green-deep);position:relative;overflow:hidden;border-bottom:none}
   header.hero::before{
-    content:'';
-    position:absolute;inset:0;
+    content:'';position:absolute;inset:0;
     background:
-        linear-gradient(165deg, #800020 0%, #501A1E 25%, #1E2B1F 50%, #00301B 75%),
-        radial-gradient(ellipse 80% 60% at 10% -10%, rgba(128,0,32,0.7) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 80% at 90% 20%, rgba(128,0,32,0.25) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 30% 100%, rgba(0,66,37,0.5) 0%, transparent 70%);
+      linear-gradient(165deg,#800020 0%,#501A1E 25%,#1E2B1F 50%,#00301B 75%),
+      radial-gradient(ellipse 80% 60% at 10% -10%,rgba(128,0,32,.7) 0%,transparent 70%),
+      radial-gradient(ellipse 50% 80% at 90% 20%,rgba(128,0,32,.25) 0%,transparent 60%),
+      radial-gradient(ellipse 60% 50% at 30% 100%,rgba(0,66,37,.5) 0%,transparent 70%);
   }
   header.hero .wrap{position:relative;z-index:1}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--porcelain);margin-bottom:26px;
-  }
-  .hero h1{
-    font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:500;
-    letter-spacing:-.02em;max-width:19ch;color:var(--porcelain);
-  }
-  .hero-sub1{
-    font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.12;font-weight:500;
-    letter-spacing:-.015em;max-width:24ch;color:var(--porcelain);margin-top:8px;
-  }
-  .hero-sub2{
-    font-size:clamp(1.2rem,3vw,1.9rem);line-height:1.15;font-weight:400;
-    letter-spacing:-.01em;max-width:30ch;color:var(--porcelain);margin-top:12px;
-  }
-  .hero-sub2{ color: rgba(247,246,243,0.85); }
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--porcelain);margin-bottom:26px}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.06;font-weight:500;letter-spacing:-.02em;max-width:19ch;color:var(--porcelain)}
+  .hero-sub1{font-size:clamp(1.6rem,4vw,2.6rem);line-height:1.12;font-weight:500;letter-spacing:-.015em;max-width:24ch;color:var(--porcelain);margin-top:8px}
+  .hero-sub2{font-size:clamp(1.2rem,3vw,1.9rem);line-height:1.15;font-weight:400;letter-spacing:-.01em;max-width:30ch;color:rgba(247,246,243,.85);margin-top:12px}
   .hero-sub2 em{font-style:normal;color:var(--lime)}
   .hero .cta-row{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .btn{
-    font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;
-    text-decoration:none;padding:11px 20px;border-radius:6px;transition:transform .15s ease, background .2s, color .2s;
-  }
+  .btn{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.04em;text-decoration:none;padding:11px 20px;border-radius:6px;transition:transform .15s ease,background .2s,color .2s}
   .btn:hover{transform:translateY(-1px)}
   .btn-primary{border:1px solid var(--lime);color:var(--lime);background:transparent}
   .btn-primary:hover{background:var(--lime);color:var(--green-deep)}
@@ -125,27 +91,42 @@
   h2{font-family:'JetBrains Mono',monospace;font-size:clamp(1.4rem,2.8vw,1.9rem);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--signal)}
   .sec-idx{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mist);letter-spacing:.1em}
 
-  /* ---------- About / values ---------- */
-  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+  /* ---------- Pillars ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-bottom:48px}
+  .pillar{border-top:2px solid var(--green);padding-top:20px}
+  .pillar h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .pillar p{font-size:.93rem;color:var(--body)}
+  .pillar .pillar-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--lime);box-shadow:0 1px 3px rgba(0,0,0,.15);flex-shrink:0}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
   .about-grid p{margin-bottom:18px;max-width:60ch;color:var(--body)}
   .about-grid p b{color:var(--ink)}
-  .fact-list{border-top:1px solid var(--line);align-self:start;margin-top:24px}
-  .fact{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
-  .fact .k{color:var(--mist);font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;padding-top:2px}
-  .fact .v{text-align:right}
-  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:36px} .about-grid .right-col{order:-1}}
 
-  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:56px}
-  .pillar{border-top:2px solid var(--green);padding-top:20px}
-  .pillar h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-  .pillar p{font-size:.93rem;color:var(--body)}
+  /* ---------- MTG Card ---------- */
+  .right-col{display:flex;flex-direction:column;gap:24px}
+  .mtg-card{border:3px solid var(--green);border-radius:14px;overflow:hidden;background:var(--porcelain);box-shadow:0 8px 30px -10px rgba(0,0,0,.3)}
+  .mtg-name-bar{background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+  .mtg-name{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--porcelain);letter-spacing:.03em}
+  .mtg-mana{display:flex;gap:5px}
+  .mtg-mana-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--lime);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .mtg-art{margin:6px 8px;border-radius:6px;border:1px solid rgba(0,66,37,.2);overflow:hidden}
+  .mtg-art img{width:100%;height:200px;object-fit:cover;object-position:80% 40%;display:block}
+  .mtg-type{margin:4px 8px;padding:8px 12px;background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--porcelain);letter-spacing:.03em;display:flex;justify-content:space-between;align-items:center}
+  .mtg-text{margin:6px 8px 8px;padding:10px 12px;background:var(--white);border-radius:6px;border:1px solid rgba(0,66,37,.12)}
+  .mtg-fact{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(20,24,22,.06);font-size:14px}
+  .mtg-fact:last-child{border-bottom:none}
+  .mtg-k{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mist);letter-spacing:.08em;text-transform:uppercase}
+  .mtg-v{text-align:right;color:var(--ink);font-size:14px;font-weight:500}
+  .mtg-bottom{margin:0 8px 8px;padding:8px 12px;background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);border-radius:6px;display:flex;justify-content:space-between;align-items:center}
+  .mtg-bottom-left{display:flex;gap:14px;align-items:center}
+  .mtg-bottom-link{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--lime)}
+  .mtg-power{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--porcelain);background:rgba(0,0,0,.25);padding:2px 8px;border-radius:4px}
 
   /* ---------- Timeline ---------- */
   .timeline{border-top:1px solid var(--line)}
-  .t-row{
-    display:grid;grid-template-columns:170px 1fr;gap:28px;
-    padding:26px 0;border-bottom:1px solid var(--line);
-  }
+  .t-row{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:26px 0;border-bottom:1px solid var(--line)}
   .t-when{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--green);letter-spacing:.03em;padding-top:4px;line-height:1.8}
   .t-role{font-weight:500;font-size:1.06rem}
   .t-org{color:var(--mist);font-size:.94rem;margin-top:2px}
@@ -155,12 +136,7 @@
 
   /* ---------- Projects ---------- */
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-  .card{
-    border:1px solid var(--line);border-radius:10px;padding:30px 28px;
-    background:var(--white);display:flex;flex-direction:column;gap:12px;
-    text-decoration:none;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
+  .card{border:1px solid var(--line);border-radius:10px;padding:30px 28px;background:var(--white);display:flex;flex-direction:column;gap:12px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
   a.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px -18px rgba(20,24,22,.28)}
   .card .tag{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
   .card h3{font-size:1.26rem;font-weight:700;letter-spacing:-.01em}
@@ -173,23 +149,12 @@
   .contact h2{max-width:24ch;color:var(--porcelain)}
   .contact .sec-idx{color:rgba(247,246,243,.45)}
   .contact .lede{margin-top:16px;max-width:56ch;color:rgba(247,246,243,.75);font-size:1.02rem}
-  .contact .mail{
-    display:inline-block;margin-top:30px;font-family:'JetBrains Mono',monospace;
-    font-size:clamp(.95rem,2.4vw,1.25rem);color:var(--lime);text-decoration:none;
-    border-bottom:1px solid rgba(163,230,53,.4);padding-bottom:3px;transition:border-color .2s;
-  }
+  .contact .mail{display:inline-block;margin-top:30px;font-family:'JetBrains Mono',monospace;font-size:clamp(.95rem,2.4vw,1.25rem);color:var(--lime);text-decoration:none;border-bottom:1px solid rgba(163,230,53,.4);padding-bottom:3px;transition:border-color .2s}
   .contact .mail:hover{border-bottom-color:var(--lime)}
   .socials{margin-top:36px;display:flex;gap:26px;flex-wrap:wrap}
-  .socials a{
-    font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.05em;
-    color:var(--lime);text-decoration:none;transition:opacity .2s;
-  }
+  .socials a{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.05em;color:var(--lime);text-decoration:none;transition:opacity .2s}
   .socials a:hover{opacity:.7}
-  footer{
-    background:var(--green-deep);color:rgba(247,246,243,.45);
-    border-top:1px solid var(--line-light);
-    padding:24px 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em;
-  }
+  footer{background:var(--green-deep);color:rgba(247,246,243,.45);border-top:1px solid var(--line-light);padding:24px 0;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em}
   .footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   /* ---------- Reveal ---------- */
@@ -203,9 +168,7 @@
   <div class="nav-inner">
     <a class="nav-mark" href="#top">
       <svg width="28" height="28" viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#800020"/><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
-      <span style="display:flex;align-items:baseline;gap:0">
-        <span style="color:var(--lime)">cfk.ventures</span>
-      </span>
+      <span style="color:var(--lime)">cfk.ventures</span>
     </a>
     <div class="nav-links">
       <a href="#about" data-de="Profil" data-en="Profile">Profil</a>
@@ -223,12 +186,12 @@
     <h1>Christoph Friedrich Koch</h1>
     <p class="hero-sub1">Growth Advisor & Venture Builder</p>
     <p class="hero-sub2"
-      data-de="<em>Unternehmerisches</em> Denken<br><em>Datengetriebenes</em> Entscheiden<br><em>Kommerzielles</em> Handeln"
-      data-en="<em>Entrepreneurial</em> Mindset<br><em>Data-driven</em> Decisions<br><em>Commercial</em> Actions">
-      <em>Unternehmerisches</em> Denken<br>
-      <em>Datengetriebenes</em> Entscheiden<br>
-      <em>Kommerzielles</em> Handeln
-  </p>
+       data-de="<em>Unternehmerisches</em> Denken<br><em>Datengetriebenes</em> Entscheiden<br><em>Kommerzielles</em> Handeln"
+       data-en="<em>Entrepreneurial</em> Mindset<br><em>Data-driven</em> Decisions<br><em>Commercial</em> Actions">
+       <em>Unternehmerisches</em> Denken<br>
+       <em>Datengetriebenes</em> Entscheiden<br>
+       <em>Kommerzielles</em> Handeln
+    </p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact" data-de="Kontakt aufnehmen" data-en="Get in touch">Kontakt aufnehmen</a>
       <a class="btn btn-ghost" href="#projects" data-de="Projekte ansehen" data-en="See selected projects">Projekte ansehen</a>
@@ -236,7 +199,26 @@
   </div>
 </header>
 
-<section id="about">
+<section style="padding:48px 0 24px">
+  <div class="wrap">
+    <div class="pillars">
+      <div class="pillar">
+        <h3 data-de="Strategy & Analytics" data-en="Strategy & Analytics"><span class="pillar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></span> Strategy & Analytics</h3>
+        <p data-de="Marktanalyse, Wettbewerbsintelligenz, datengetriebene Entscheidungsvorlagen — von der Hypothese bis zur Handlungsempfehlung." data-en="Market analysis, competitive intelligence, data-driven decision frameworks — from hypothesis to actionable recommendation.">Marktanalyse, Wettbewerbsintelligenz, datengetriebene Entscheidungsvorlagen — von der Hypothese bis zur Handlungsempfehlung.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-de="Tech & Product" data-en="Tech & Product"><span class="pillar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span> Tech & Product</h3>
+        <p data-de="Technische Architektur bewerten, Produktanforderungen schärfen, ML-Prototypen bauen — die Brücke zwischen Business-Logik und Engineering." data-en="Evaluating technical architecture, sharpening product requirements, building ML prototypes — bridging business logic and engineering.">Technische Architektur bewerten, Produktanforderungen schärfen, ML-Prototypen bauen — die Brücke zwischen Business-Logik und Engineering.</p>
+      </div>
+      <div class="pillar">
+        <h3 data-de="Growth & Revenue" data-en="Growth & Revenue"><span class="pillar-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span> Growth & Revenue</h3>
+        <p data-de="Go-to-Market, Full-Funnel-Akquise, Partnerschaften aufbauen und skalieren — vom Pre-Seed bis Enterprise, B2C, B2B und B2B2C." data-en="Go-to-market, full-funnel acquisition, building and scaling partnerships — from pre-seed to enterprise, B2C, B2B and B2B2C.">Go-to-Market, Full-Funnel-Akquise, Partnerschaften aufbauen und skalieren — vom Pre-Seed bis Enterprise, B2C, B2B und B2B2C.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="padding-top:48px">
   <div class="wrap reveal">
     <div class="sec-head">
       <h2 data-de="Profil" data-en="Profile">Profil</h2>
@@ -244,9 +226,9 @@
     </div>
     <div class="about-grid">
       <div>
-        <p data-de="Ich habe Economics und Behavioural Finance in Heidelberg und Kopenhagen studiert — das theoretische Fundament. 2026 praktisch ergänzt durch eine Weiterbildung in Data Science &amp; Machine Learning bei <b>Le Wagon</b> — mit dem Ergebnis, dass ich Modelle nicht nur verstehe, sondern selbst baue (siehe Projekte)."
-           data-en="I studied Economics and Behavioural Finance in Heidelberg and Copenhagen — the theoretical foundation. Extended in 2026 through a Data Science &amp; Machine Learning bootcamp at <b>Le Wagon</b> — with the result that I don't just understand models, I build them (see Projects).">
-           Ich habe Economics und Behavioural Finance in Heidelberg und Kopenhagen studiert — das theoretische Fundament. 2026 praktisch ergänzt durch eine Weiterbildung in Data Science &amp; Machine Learning bei <b>Le Wagon</b> — mit dem Ergebnis, dass ich Modelle nicht nur verstehe, sondern selbst baue (siehe Projekte).</p>
+        <p data-de="Ich habe <b>Economics</b> und <b>Behavioural Finance</b> in Heidelberg und Kopenhagen studiert — das theoretische Fundament. 2026 praktisch ergänzt durch eine Weiterbildung in <b>Data Science &amp; Artificial Intelligence</b> bei <b>Le Wagon</b> — mit dem Ergebnis, dass ich Modelle nicht nur verstehe, sondern selbst baue (siehe Projekte)."
+           data-en="I studied <b>Economics</b> and <b>Behavioural Finance</b> in Heidelberg and Copenhagen — the theoretical foundation. Extended in 2026 through a <b>Data Science &amp; Artificial Intelligence</b> bootcamp at <b>Le Wagon</b> — with the result that I don't just understand models, I build them (see Projects).">
+           Ich habe <b>Economics</b> und <b>Behavioural Finance</b> in Heidelberg und Kopenhagen studiert — das theoretische Fundament. 2026 praktisch ergänzt durch eine Weiterbildung in <b>Data Science &amp; Artificial Intelligence</b> bei <b>Le Wagon</b> — mit dem Ergebnis, dass ich Modelle nicht nur verstehe, sondern selbst baue (siehe Projekte).</p>
         <p data-de="Dazwischen stehen acht Jahre in der Praxis. Consulting, Business Development und Growth bei <b>Stripe</b>, <b>Workday</b>, <b>Bain</b> und <b>SAP</b> — bis ich zuletzt bei <b>Bitpanda</b> den deutschen Markteintritt verantwortet und das Privatkundengeschäft von 2022–2025 aufgebaut habe: über eine Million Neukunden, Marktanteil verdreifacht, Finanzziele auf Rekordniveau erreicht und die strategische Partnerschaft mit dem <b>FC Bayern München</b> gesteuert (siehe Projekte). Danach eine strategische Auszeit, um mich persönlichen Zielen und Projekten zu widmen."
            data-en="In between: eight years in practice. Consulting, business development and growth at <b>Stripe</b>, <b>Workday</b>, <b>Bain</b> and <b>SAP</b> — before leading <b>Bitpanda</b>'s German market entry and building the retail business from 2022–2025: over one million new customers, tripled market share, financial targets reached at record level, and managing the strategic partnership with <b>FC Bayern Munich</b> (see Projects). Followed by a strategic break to pursue personal goals and projects.">
            Dazwischen stehen acht Jahre in der Praxis. Consulting, Business Development und Growth bei <b>Stripe</b>, <b>Workday</b>, <b>Bain</b> und <b>SAP</b> — bis ich zuletzt bei <b>Bitpanda</b> den deutschen Markteintritt verantwortet und das Privatkundengeschäft von 2022–2025 aufgebaut habe: über eine Million Neukunden, Marktanteil verdreifacht, Finanzziele auf Rekordniveau erreicht und die strategische Partnerschaft mit dem <b>FC Bayern München</b> gesteuert (siehe Projekte). Danach eine strategische Auszeit, um mich persönlichen Zielen und Projekten zu widmen.</p>
@@ -257,32 +239,42 @@
            data-en="Whether <b>BaFin licensing, market launch, marathon or 900 km on a bike</b> through the mountains (see Projects) — endurance on long, steep and rocky roads is my modus operandi.">
            Ob <b>BaFin-Lizenzierung, Markteinführung, Marathon oder 900 km auf dem Rad</b> durch die Berge (siehe Projekte) — Durchhaltevermögen auf langen, steilen und steinigen Strecken ist mein Modus Operandi.</p>
       </div>
-      <div>
-        <img src="profile.jpeg" alt="Christoph Friedrich Koch" style="width:100%;border-radius:8px;margin-bottom:24px;object-fit:cover;aspect-ratio:3/4">
-        <div class="fact-list">
-        <div class="fact"><span class="k">BASE</span><span class="v">Berlin, DE</span></div>
-        <div class="fact"><span class="k">FOCUS</span><span class="v">BD · Growth · Product · Data</span></div>
-        <div class="fact"><span class="k">STACK</span><span class="v">Python · SQL · Scikit-Learn · GCP</span></div>
-        <div class="fact"><span class="k" data-de="SPRACHE" data-en="LANGUAGE">SPRACHE</span><span class="v">DE · EN (C2) · FR (B2)</span></div>
-        <div class="fact"><span class="k">STATUS</span><span class="v" data-de="Offen für Projekte &amp; Rollen" data-en="Open to projects &amp; roles">Offen für Projekte &amp; Rollen</span></div>
+      <div class="right-col">
+        <div class="mtg-card">
+          <div class="mtg-name-bar">
+            <span class="mtg-name">Christoph Friedrich Koch</span>
+            <div class="mtg-mana">
+              <span class="mtg-mana-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></span>
+              <span class="mtg-mana-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+              <span class="mtg-mana-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+            </div>
+          </div>
+          <div class="mtg-art">
+            <img src="profile.jpeg" alt="Christoph Friedrich Koch">
+          </div>
+          <div class="mtg-type">
+            <span data-de="Growth Advisor — Venture Builder" data-en="Growth Advisor — Venture Builder">Growth Advisor — Venture Builder</span>
+            <svg width="26" height="26" viewBox="0 0 100 100"><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
+          </div>
+          <div class="mtg-text">
+            <div class="mtg-fact"><span class="mtg-k">Base</span><span class="mtg-v">Berlin, DE</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Modus" data-en="Mode">Modus</span><span class="mtg-v">Freelance · Remote / Hybrid</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Industrie" data-en="Industry">Industrie</span><span class="mtg-v" data-de="Finanzen · Tech · E-Commerce" data-en="Finance · Tech · E-Commerce">Finanzen · Tech · E-Commerce</span></div>
+            <div class="mtg-fact"><span class="mtg-k">Stack</span><span class="mtg-v">Python · SQL · Scikit-Learn · GCP</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Sprachen" data-en="Languages">Sprachen</span><span class="mtg-v">DE · EN (C2) · FR (B2)</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Typ" data-en="Type">Typ</span><span class="mtg-v">ENTP-A</span></div>
+          </div>
+          <div class="mtg-bottom">
+            <div class="mtg-bottom-left">
+              <span class="mtg-bottom-link">cfk.ventures</span>
+              <span class="mtg-bottom-link">github.com/cfk44</span>
+            </div>
+            <span class="mtg-power">8 / 8</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <h3 data-de="Strategy & Analytics" data-en="Strategy & Analytics">Strategy & Analytics</h3>
-        <p data-de="Marktanalyse, Wettbewerbsintelligenz, datengetriebene Entscheidungsvorlagen — von der Hypothese bis zur Handlungsempfehlung." data-en="Market analysis, competitive intelligence, data-driven decision frameworks — from hypothesis to actionable recommendation.">Marktanalyse, Wettbewerbsintelligenz, datengetriebene Entscheidungsvorlagen — von der Hypothese bis zur Handlungsempfehlung.</p>
-      </div>
-      <div class="pillar">
-        <h3 data-de="Tech & Product" data-en="Tech & Product">Tech & Product</h3>
-        <p data-de="Technische Architektur bewerten, Produktanforderungen schärfen, ML-Prototypen bauen — die Brücke zwischen Business-Logik und Engineering." data-en="Evaluating technical architecture, sharpening product requirements, building ML prototypes — bridging business logic and engineering.">Technische Architektur bewerten, Produktanforderungen schärfen, ML-Prototypen bauen — die Brücke zwischen Business-Logik und Engineering.</p>
-      </div>
-      <div class="pillar">
-        <h3 data-de="Growth & Revenue" data-en="Growth & Revenue">Growth & Revenue</h3>
-        <p data-de="Go-to-Market, Full-Funnel-Akquise, Partnerschaften aufbauen und skalieren — vom Pre-Seed bis Enterprise, B2C, B2B und B2B2C." data-en="Go-to-market, full-funnel acquisition, building and scaling partnerships — from pre-seed to enterprise, B2C, B2B and B2B2C.">Go-to-Market, Full-Funnel-Akquise, Partnerschaften aufbauen und skalieren — vom Pre-Seed bis Enterprise, B2C, B2B und B2B2C.</p>
-      </div>
-    </div>
+  </div>
 </section>
 
 <section id="work" style="padding-top:0">
@@ -295,7 +287,7 @@
       <div class="t-row">
         <div class="t-when">2025 — 2026</div>
         <div>
-          <div class="t-role" data-de="Data Science &amp; AI — learning & building sabbatical" data-en="Data Science &amp; AI — learning & building sabbatical">Data Science &amp; AI — learning & building sabbatical</div>
+          <div class="t-role" data-de="Data Science &amp; AI — gezielte Weiterbildung" data-en="Data Science &amp; AI — deliberate upskilling">Data Science &amp; AI — gezielte Weiterbildung</div>
           <div class="t-org">Le Wagon · Berlin</div>
           <ul class="t-desc">
             <li data-de="9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment" data-en="9-week full-time bootcamp: machine learning, deep learning, product development &amp; deployment">9-wöchiges Vollzeit-Bootcamp: Machine Learning, Deep Learning, Produktentwicklung &amp; Deployment</li>
@@ -428,29 +420,27 @@
 </footer>
 
 <script>
-  // ---- Language toggle (DE default) ----
-  const toggle = document.getElementById('langToggle');
-  let lang = 'de';
+  const toggle=document.getElementById('langToggle');
+  let lang='de';
   function applyLang(l){
-    document.documentElement.lang = l;
+    document.documentElement.lang=l;
     document.querySelectorAll('[data-de]').forEach(el=>{
-      el.innerHTML = el.getAttribute('data-' + l);
+      el.innerHTML=el.getAttribute('data-'+l);
     });
-    toggle.textContent = l === 'de' ? 'EN' : 'DE';
+    toggle.textContent=l==='de'?'EN':'DE';
   }
-  toggle.addEventListener('click', ()=>{
-    lang = lang === 'de' ? 'en' : 'de';
+  toggle.addEventListener('click',()=>{
+    lang=lang==='de'?'en':'de';
     applyLang(lang);
   });
 
-  // ---- Scroll reveal (respects reduced motion) ----
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const reveals = document.querySelectorAll('.reveal');
+  const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals=document.querySelectorAll('.reveal');
   if(prefersReduced){
     reveals.forEach(el=>el.classList.add('in'));
   }else{
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
     },{threshold:.1});
     reveals.forEach(el=>io.observe(el));
   }

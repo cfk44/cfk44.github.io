@@ -107,12 +107,14 @@
   /* ---------- MTG Card ---------- */
   .right-col{display:flex;flex-direction:column;gap:24px}
   .mtg-card{border:3px solid var(--green);border-radius:14px;overflow:hidden;background:var(--porcelain);box-shadow:0 8px 30px -10px rgba(0,0,0,.3);max-width:400px}
-  .mtg-name-bar{background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
-  .mtg-name{font-family:'JetBrains Mono',monospace;font-size:11px;white-space:nowrap;font-weight:700;color:var(--porcelain);letter-spacing:.03em}
-  .mtg-mana{display:flex;gap:5px}
-  .mtg-mana-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--lime);box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .mtg-name-bar{background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:8px}
+  .mtg-name{font-family:'JetBrains Mono',monospace;font-size:15px;white-space:nowrap;font-weight:700;color:var(--porcelain);letter-spacing:.03em;overflow:hidden;text-overflow:ellipsis}
+  .mtg-mana{display:flex;gap:5px;flex-shrink:0}
+  .mtg-mana-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--lime);box-shadow:0 1px 3px rgba(0,0,0,.3);flex-shrink:0}
   .mtg-art{margin:6px 8px;border-radius:6px;border:1px solid rgba(0,66,37,.2);overflow:hidden}
-  .mtg-type{margin:4px 8px;padding:8px 12px;background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:var(--porcelain);letter-spacing:.03em;display:flex;justify-content:space-between;align-items:center;white-space:nowrap}
+  .mtg-art img{width:100%;height:200px;object-fit:cover;object-position:80% 40%;display:block}
+  .mtg-type{margin:4px 8px;padding:8px 12px;background:linear-gradient(to right,#800020 0%,#800020 10%,#00301B 90%,#00301B 100%);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--porcelain);letter-spacing:.03em;display:flex;justify-content:space-between;align-items:center;white-space:nowrap;gap:8px}
+  .mtg-type svg{flex-shrink:0}
   .mtg-text{margin:6px 8px 8px;padding:10px 12px;background:var(--white);border-radius:6px;border:1px solid rgba(0,66,37,.12)}
   .mtg-fact{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(20,24,22,.06);font-size:14px}
   .mtg-fact:last-child{border-bottom:none}
@@ -248,20 +250,18 @@
               <span class="mtg-mana-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00301B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
             </div>
           </div>
-          <div class="mtg-art" style="height:200px">
-            <img src="profile.jpeg" alt="Christoph Friedrich Koch" style="width:100%;height:200px;object-fit:cover;display:block">
+          <div class="mtg-art" style="height:280px">
+            <img src="profile.jpeg" alt="Christoph Friedrich Koch" style="width:100%;height:300px;object-fit:cover;object-position:80% 40%;display:block">
           </div>
           <div class="mtg-type">
-            <span data-de="Technologieberater — Unternehmensentwickler" data-en="Tech Advisor — Venture Developer">Technologieberater — Unternehmensentwickler</span>
+            <span data-de="Freelance — Technologieberater" data-en="Freelance — Tech Advisor">Freelance — Technologieberater</span>
             <svg width="26" height="26" viewBox="0 0 100 100"><path d="M 18 32 L 41 82 L 80 12 L 42 58 L 33 39 Z" fill="#F7F6F3"/></svg>
           </div>
           <div class="mtg-text">
-            <div class="mtg-fact"><span class="mtg-k">Base</span><span class="mtg-v">Berlin, DE</span></div>
-            <div class="mtg-fact"><span class="mtg-k" data-de="Modus" data-en="Mode">Modus</span><span class="mtg-v">Freelance · Remote / Hybrid</span></div>
-            <div class="mtg-fact"><span class="mtg-k" data-de="Industrie" data-en="Industry">Industrie</span><span class="mtg-v" data-de="Finanzen · Tech · E-Commerce" data-en="Finance · Tech · E-Commerce">Finanzen · Tech · E-Commerce</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Fokus" data-en="Focus">Fokus</span><span class="mtg-v" data-de="Strategie · Produkt · Geschäftsentwicklung" data-en="Strategy · Product · Business Development">Strategie · Produkt · Geschäftsentwicklung</span></div>
             <div class="mtg-fact"><span class="mtg-k">Stack</span><span class="mtg-v">Python · SQL · Scikit-Learn · GCP</span></div>
-            <div class="mtg-fact"><span class="mtg-k" data-de="Sprachen" data-en="Languages">Sprachen</span><span class="mtg-v">DE · EN (C2) · FR (B2)</span></div>
-            <div class="mtg-fact"><span class="mtg-k" data-de="Typ" data-en="Type">Typ</span><span class="mtg-v">ENTP-A</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Sprachen" data-en="Languages">Sprachen</span><span class="mtg-v" data-de="DE (nativ) · EN (C2) · FR (B2)" data-en="DE (native) · EN (C2) · FR (B2)">DE (nativ) · EN (C2) · FR (B2)</span></div>
+            <div class="mtg-fact"><span class="mtg-k" data-de="Basis" data-en="Base">Basis</span><span class="mtg-v">Berlin · Remote / Hybrid</span></div>
           </div>
           <div class="mtg-bottom">
             <div class="mtg-bottom-left">

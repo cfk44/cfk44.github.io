@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G5 Werte-Tafel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#EDEEF0;
+    --plate:#FBFBFA;
+    --ink:#1B2430;
+    --ink-soft:#5A6472;
+    --ink-faint:#8B95A1;
+    --rule:#CDD2D8;
+    --rule-strong:#9AA3AE;
+    --einklang:#4A6B52;
+    --hindernisse:#A8792C;
+    --abwesend:#8E97A2;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{margin:0;padding:0;}
+
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.45;
+    padding:32px 20px 64px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .plate{
+    max-width:1240px;
+    margin:0 auto;
+    background:var(--plate);
+    padding:38px 40px 34px;
+    box-shadow:0 1px 0 rgba(27,36,48,.14), 0 18px 40px -28px rgba(27,36,48,.5);
+  }
+
+  /* ---------- Kopf ---------- */
+
+  .head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+    padding-bottom:18px;
+    border-bottom:1.5px solid var(--rule-strong);
+  }
+
+  .head h1{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:400;
+    font-size:26px;
+    letter-spacing:.005em;
+    margin:0;
+  }
+
+  .month{
+    font-family:"Newsreader",Georgia,serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:26px;
+    color:var(--ink-soft);
+    min-width:6ch;
+  }
+
+  /* ---------- Raster ---------- */
+
+  .grid{
+    display:grid;
+    grid-template-columns:88px repeat(5,1fr);
+  }
+
+  .cell{
+    padding:14px 16px 18px 0;
+    border-top:1px solid var(--rule);
+  }
+
+  .grid > .cell:nth-child(6n+1){
+    padding-right:18px;
+  }
+
+  .grid > .cell:nth-child(-n+6){
+    border-top:none;
+    padding-top:18px;
+  }
+
+  .stub{
+    font-family:"Newsreader",Georgia,serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:15px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Zeile 1: Wert + Zustand ---------- */
+
+  .value{
+    font-family:"Newsreader",Georgia,serif;
+    font-weight:500;
+    font-size:19px;
+    line-height:1.2;
+    margin-bottom:12px;
+  }
+
+  .state{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:0;
+    background:none;
+    padding:3px 8px 3px 0;
+    margin:0;
+    font-family:"Archivo",sans-serif;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    cursor:pointer;
+    border-radius:2px;
+  }
+
+  .state:focus-visible{
+    outline:2px solid var(--ink);
+    outline-offset:2px;
+  }
+
+  .dot{
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    flex:none;
+    background:var(--abwesend);
+  }
+
+  .state[data-state="einklang"] .dot{background:var(--einklang);}
+  .state[data-state="hindernisse"] .dot{background:var(--hindernisse);}
+  .state[data-state="abwesend"] .dot{background:var(--abwesend);}
+
+  .state[data-state="einklang"]{color:var(--einklang);}
+  .state[data-state="hindernisse"]{color:var(--hindernisse);}
+  .state[data-state="abwesend"]{color:var(--abwesend);}
+
+  /* ---------- Zeile 2: Kernfrage ---------- */
+
+  .question{
+    font-family:"Newsreader",Georgia,serif;
+    font-style:italic;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.4;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Zeilen 3 & 4: Eingaben ---------- */
+
+  .entry{
+    font-size:14.5px;
+    line-height:1.5;
+    min-height:4.6em;
+    color:var(--ink);
+    white-space:pre-wrap;
+    border-radius:2px;
+  }
+
+  .entry:focus{
+    outline:none;
+    background:rgba(27,36,48,.04);
+    box-shadow:0 0 0 6px rgba(27,36,48,.04);
+  }
+
+  .entry:empty::before{
+    content:"";
+    display:block;
+    width:34px;
+    border-bottom:1px solid var(--rule);
+    margin-top:.55em;
+  }
+
+  .insight{
+    color:var(--ink-soft);
+  }
+
+  /* ---------- offenes Feld ---------- */
+
+  .open{
+    margin-top:26px;
+    padding-top:16px;
+    border-top:1.5px solid var(--rule-strong);
+  }
+
+  .open .entry{
+    font-family:"Newsreader",Georgia,serif;
+    font-size:17px;
+    line-height:1.5;
+    min-height:2.4em;
+    color:var(--ink);
+  }
+
+  /* ---------- Fußleiste ---------- */
+
+  .tools{
+    max-width:1240px;
+    margin:14px auto 0;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    font-size:13px;
+    color:var(--ink-faint);
+  }
+
+  .tools button{
+    font-family:"Archivo",sans-serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    background:none;
+    border:1px solid var(--rule-strong);
+    padding:5px 11px;
+    border-radius:2px;
+    cursor:pointer;
+  }
+
+  .tools button:hover{color:var(--ink);border-color:var(--ink);}
+
+  /* ---------- schmale Schirme ---------- */
+
+  @media (max-width:860px){
+    body{padding:16px 12px 40px;}
+    .plate{padding:24px 20px 26px;}
+    .grid{grid-template-columns:1fr;}
+    .cell{padding:0;border-top:none;}
+    .grid > .cell:nth-child(6n+1){display:none;}
+    .grid > .cell:nth-child(6n+2){
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--rule);
+    }
+    .grid > .cell:nth-child(-n+6){padding-top:0;}
+    .grid > .cell:nth-child(2){margin-top:18px;border-top:none;}
+    .entry{min-height:0;margin-top:10px;}
+    .question{margin-top:10px;}
+  }
+
+  /* ---------- Druck ---------- */
+
+  @page{size:A4 landscape;margin:11mm;}
+
+  @media print{
+    body{background:#fff;padding:0;font-size:13px;}
+    .plate{box-shadow:none;padding:0;max-width:none;background:#fff;}
+    .tools{display:none;}
+    .entry:empty::before{border-color:#bbb;}
+    .value{font-size:16px;}
+    .question{font-size:13px;}
+    .entry{font-size:12px;min-height:3.6em;}
+  }
+</style>
+</head>
+<body>
+
+<div class="plate">
+
+  <div class="head">
+    <h1>G5 Werte-Tafel</h1>
+    <div class="month" contenteditable="true" spellcheck="false">August 2026</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- Zeile 1 -->
+    <div class="cell stub">Wert</div>
+
+    <div class="cell">
+      <div class="value">Eigenständigkeit</div>
+      <button class="state" data-state="hindernisse"><span class="dot"></span><span class="label">Mit Hindernissen</span></button>
+    </div>
+    <div class="cell">
+      <div class="value">Mut &amp; Risiko</div>
+      <button class="state" data-state="abwesend"><span class="dot"></span><span class="label">Abwesend</span></button>
+    </div>
+    <div class="cell">
+      <div class="value">Integrität</div>
+      <button class="state" data-state="hindernisse"><span class="dot"></span><span class="label">Mit Hindernissen</span></button>
+    </div>
+    <div class="cell">
+      <div class="value">Verbindungen</div>
+      <button class="state" data-state="einklang"><span class="dot"></span><span class="label">Im Einklang</span></button>
+    </div>
+    <div class="cell">
+      <div class="value">Klarheit</div>
+      <button class="state" data-state="hindernisse"><span class="dot"></span><span class="label">Mit Hindernissen</span></button>
+    </div>
+
+    <!-- Zeile 2 -->
+    <div class="cell stub">Kernfrage</div>
+
+    <div class="cell"><div class="question">Handle ich aus eigenen Stücken und erschaffe ich eigene Werke?</div></div>
+    <div class="cell"><div class="question">Stelle ich mich dem Unbequemen, anstatt ihm auszuweichen?</div></div>
+    <div class="cell"><div class="question">Sage ich, was ich denke, und tue ich, was ich sage?</div></div>
+    <div class="cell"><div class="question">Gehe ich auf Menschen zu und bereichere ich sie?</div></div>
+    <div class="cell"><div class="question">Verkörpere ich Klarheit – nach innen und nach außen?</div></div>
+
+    <!-- Zeile 3 -->
+    <div class="cell stub">Rückblick</div>
+
+    <div class="cell"><div class="entry" contenteditable="true">Webseite poliert
+TdJ-Film aufgeschoben</div></div>
+    <div class="cell"><div class="entry" contenteditable="true">Keine unbequemen Chancen nutzen können</div></div>
+    <div class="cell"><div class="entry" contenteditable="true">Bei unfairer Kommunikation in der Familie nicht klar</div></div>
+    <div class="cell"><div class="entry" contenteditable="true">Zeit mit Familie und Freunden
+Ex-Kollegen angeschrieben</div></div>
+    <div class="cell"><div class="entry" contenteditable="true">Selbstverständnis während der Pause
+Zu oft Ablenkung gesucht</div></div>
+
+    <!-- Zeile 4 -->
+    <div class="cell stub">Einsichten</div>
+
+    <div class="cell"><div class="entry insight" contenteditable="true">Krankheit hat mich eingeschränkt
+Konsum hat Produktion ersetzt</div></div>
+    <div class="cell"><div class="entry insight" contenteditable="true">Niederlagen, Verluste oder Konflikte als Beweismittel wofür?</div></div>
+    <div class="cell"><div class="entry insight" contenteditable="true">Die richtige Situation für radikale Ehrlichkeit abwarten oder sie proaktiv kreieren?</div></div>
+    <div class="cell"><div class="entry insight" contenteditable="true">Verbindende Aktivitäten erhöhen Chancen
+Zurückhaltung aus Angst vor Zurückweisung?</div></div>
+    <div class="cell"><div class="entry insight" contenteditable="true">Tägliches Vergegenwärtigen ruht
+Muster: Ablenkung vor Bedürfnissen und Emotionen</div></div>
+
+  </div>
+
+  <div class="open">
+    <div class="entry" contenteditable="true"></div>
+  </div>
+
+</div>
+
+<div class="tools">
+  <button id="clear">Leere Tafel</button>
+  <button id="print">Drucken</button>
+  <span>Zustand anklicken zum Wechseln. Die Tafel speichert nichts – zum Aufbewahren drucken oder als PDF sichern.</span>
+</div>
+
+<script>
+  const cycle = ["einklang","hindernisse","abwesend"];
+  const labels = {einklang:"Im Einklang", hindernisse:"Mit Hindernissen", abwesend:"Abwesend"};
+
+  document.querySelectorAll(".state").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = cycle[(cycle.indexOf(btn.dataset.state) + 1) % cycle.length];
+      btn.dataset.state = next;
+      btn.querySelector(".label").textContent = labels[next];
+    });
+  });
+
+  document.getElementById("clear").addEventListener("click", () => {
+    document.querySelectorAll(".entry").forEach(el => el.textContent = "");
+    document.querySelectorAll(".state").forEach(btn => {
+      btn.dataset.state = "abwesend";
+      btn.querySelector(".label").textContent = labels.abwesend;
+    });
+    document.querySelector(".month").textContent = "";
+  });
+
+  document.getElementById("print").addEventListener("click", () => window.print());
+</script>
+
+</body>
+</html>
